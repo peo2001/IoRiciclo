@@ -99,7 +99,7 @@ static CoreDataMethods *instance=nil;
         
     }
     
-    NSLog(@"IL PATH:%@",[self applicationDocumentsDirectory]);
+   // NSLog(@"IL PATH:%@",[self applicationDocumentsDirectory]);
     
     NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"IoRiciclo3.sqlite"]];
     
@@ -109,7 +109,7 @@ static CoreDataMethods *instance=nil;
     
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
         
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+       // NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         
         abort();
         

@@ -16,9 +16,9 @@
 {
     
    
-    return [NSString stringWithFormat:@"http://hq1.xtremesoftware.it/ioriciclo/webservices/"];
+    //return [NSString stringWithFormat:@"http://hq1.xtremesoftware.it/ioriciclo/webservices/"];
    // return [NSString stringWithFormat:@"http://kiss/IoRiciclo/WebServices/"];
-   //return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
+   return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
 }
 
 +(NSMutableArray *)SyncComuni:(NSNumber *)IdProvincia
@@ -63,7 +63,7 @@
    // NSString *fullUrlRequest =[UrlRequest stringByAppendingString:strComune];
      NSString *fullUrlRequest =[NSString stringWithFormat: @"%@%@%@",[self UrlRequest],[Zone UrlRequest],IdComune];
     
-    NSLog(@"req: %@",fullUrlRequest);
+    //NSLog(@"req: %@",fullUrlRequest);
     //se il teefono è connesso
     if ([Connector connected])
     {
@@ -205,7 +205,7 @@
             [GiorniRiciclo Delete: giorno];
             
         }
-       NSLog(@"fullUrlRequest: %@",encodedUrl);
+      // NSLog(@"fullUrlRequest: %@",encodedUrl);
        // NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]]);
         //recuper il plist dalla rete
         NSMutableDictionary *DictionaryZone = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]];
@@ -247,8 +247,8 @@
             [CentriRaccolta Delete: centro];
             
         }
-        NSLog(@"fullUrlRequest: %@",encodedUrl);
-        NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]]);
+        //NSLog(@"fullUrlRequest: %@",encodedUrl);
+        //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]]);
         //recuper il plist dalla rete
         NSMutableDictionary *DictionaryCentri = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]];
         
@@ -293,7 +293,7 @@
             [Cassonetto Delete: cassonetto];
             
         }
-        NSLog(@"fullUrlRequest: %@",encodedUrl);
+       // NSLog(@"fullUrlRequest: %@",encodedUrl);
         //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]]);
         //recuper il plist dalla rete
         NSMutableDictionary *DictionaryCassonetti = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]];
@@ -321,7 +321,7 @@
     
     avvisi = [Avvisi RC_Fetch:[MyApplicationSingleton getIdComune] : @"datacreazione"];
     
-    NSLog(@"avvisi size %lu",(unsigned long)avvisi.fetchedObjects.count);
+   // NSLog(@"avvisi size %lu",(unsigned long)avvisi.fetchedObjects.count);
     
     //se il teefono è connesso
     if ([Connector connected])
@@ -333,7 +333,7 @@
             
         }
         
-         NSLog(@"full request: %@",fullUrlRequest);
+        // NSLog(@"full request: %@",fullUrlRequest);
         //recuper il plist dalla rete
         NSMutableDictionary *DictionaryAvvisi = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]];
         //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);

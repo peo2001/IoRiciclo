@@ -394,6 +394,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Maria Cristina Narcisi";
+				TargetAttributes = {
+					4701CC7017897132000E72A7 = {
+						DevelopmentTeam = 7E47GC6V5C;
+					};
+				};
 			};
 			buildConfigurationList = 4701CC6C17897132000E72A7 /* Build configuration list for PBXProject "IoRciclo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -611,10 +616,13 @@
 		4701CCAD17897133000E72A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IoRciclo/IoRciclo-Prefix.pch";
 				INFOPLIST_FILE = "IoRciclo/IoRciclo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -622,10 +630,13 @@
 		4701CCAE17897133000E72A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IoRciclo/IoRciclo-Prefix.pch";
 				INFOPLIST_FILE = "IoRciclo/IoRciclo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
