@@ -513,6 +513,7 @@
                         <outlet property="btnOggi2" destination="yoJ-pT-iuG" id="xkk-Pk-ihc"/>
                         <outlet property="btnTreGiorni" destination="c2L-D4-0bf" id="Z3X-1Z-Wcz"/>
                         <outlet property="btnTreGiorni2" destination="e4U-Fu-6jB" id="MDl-2Y-BH7"/>
+                        <outlet property="giorniFuturiView" destination="WIl-AX-eLv" id="Qw2-mJ-JFz"/>
                         <outlet property="imageViewBackground" destination="FVx-Gw-ifN" id="WjC-WO-2Fd"/>
                         <outlet property="lblData" destination="xhM-40-SWX" id="nki-4p-0fL"/>
                         <outlet property="lblDomani" destination="oTd-t5-iX2" id="Rai-bs-LFc"/>

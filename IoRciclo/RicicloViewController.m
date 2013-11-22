@@ -169,7 +169,7 @@
     
     
     currentDate = [NSDate date];
-    self.lblData.text =[df stringFromDate:myDate].uppercaseString;
+    self.lblData.text =[NSString stringWithFormat:@"Prossimo Riciclo %@", [df stringFromDate:myDate].uppercaseString ];
     //[self createToolbar];
     
     self.imageView.image = nil;
@@ -211,7 +211,7 @@
         
         if ([GiorniRiciclaggio count] > 0 )
         {
-            self.lblData.text =[df stringFromDate:[[GiorniRiciclaggio objectAtIndex:0]datagiorno]].uppercaseString;
+            self.lblData.text =[NSString stringWithFormat:@"Prossimo Riciclo %@", [df stringFromDate:myDate].uppercaseString ];
             
             self.lblTipoRiciclo.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggio objectAtIndex:0]tiporiciclo]];
             [self setImmagineInButton:0:_btnOggi : [GiorniRiciclaggio objectAtIndex:0]];
@@ -815,6 +815,27 @@
 
 
 //FINE SEZIONE NOTIFICHE
+
+
+//ROTAZIONE
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+        toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.toolBar.frame = CGRectMake(self.toolBar.bounds.origin.x,
+                                        18, self.view.frame.size.width, self.toolBar.bounds.size.height);
+        
+        self.giorniFuturiView.frame = CGRectMake(self.imageViewBackground.bounds.size.width -50,
+                                            self.lblData.frame.origin.y, 210, 260);
+        
+    }
+   
+   
+}
+
+//Fine ROTAZIONE
 
 //iAd Banner
 

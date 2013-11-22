@@ -72,6 +72,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnAvvisi;
 //@property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
+@property (nonatomic, retain) IBOutlet UIView *giorniFuturiView;
 
 
 
