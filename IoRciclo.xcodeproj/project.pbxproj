@@ -32,9 +32,20 @@
 		4701CCC817897218000E72A7 /* IoRiciclo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4701CCC617897218000E72A7 /* IoRiciclo.xcdatamodeld */; };
 		4701CCD81789B541000E72A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4701CCD71789B541000E72A7 /* SystemConfiguration.framework */; };
 		470CD2BA17CFEAA500DF79DE /* ComuniViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470CD2B917CFEAA500DF79DE /* ComuniViewController.m */; };
+		4711E190183B6A4B00EED72F /* Avvisi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4711E18F183B6A4B00EED72F /* Avvisi.m */; };
+		4711E193183B6E3B00EED72F /* AvvisiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4711E192183B6E3B00EED72F /* AvvisiViewController.m */; };
+		4711E19B183CF4C800EED72F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4711E19A183CF4C800EED72F /* QuartzCore.framework */; };
 		47D2752918336BFE00D72F15 /* ic_iconoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D2752818336BFE00D72F15 /* ic_iconoff.png */; };
 		47D2752B18336C0400D72F15 /* ic_iconon.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D2752A18336C0400D72F15 /* ic_iconon.png */; };
 		47D2752D18337D3000D72F15 /* backhome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47D2752C18337D3000D72F15 /* backhome.jpg */; };
+		47D2753018366D6500D72F15 /* CassonettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2752F18366D6500D72F15 /* CassonettiViewController.m */; };
+		47D2753218366E1B00D72F15 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D2753118366E1B00D72F15 /* MapKit.framework */; };
+		47D275351836780800D72F15 /* CentriRaccoltaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D275341836780800D72F15 /* CentriRaccoltaViewController.m */; };
+		47D2759318367BBD00D72F15 /* Cassonetto.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2759218367BBD00D72F15 /* Cassonetto.m */; };
+		47D2759618367BBD00D72F15 /* CentriRaccolta.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2759518367BBD00D72F15 /* CentriRaccolta.m */; };
+		47D28753183A0643006A15F6 /* CalendarioDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D28752183A0643006A15F6 /* CalendarioDetail.m */; };
+		47D28755183A53D3006A15F6 /* ann_000.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D28754183A53D3006A15F6 /* ann_000.png */; };
+		47D28758183A6049006A15F6 /* CalendarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D28757183A6049006A15F6 /* CalendarioViewController.m */; };
 		47EECAD4182D199B005FD4E4 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EECAD3182D199B005FD4E4 /* Province.m */; };
 		47EECAD7182D199C005FD4E4 /* TipiRicicloComuni.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EECAD6182D199C005FD4E4 /* TipiRicicloComuni.m */; };
 		47EECADA182D199C005FD4E4 /* Comuni.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EECAD9182D199C005FD4E4 /* Comuni.m */; };
@@ -103,9 +114,28 @@
 		4701CCD71789B541000E72A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		470CD2B817CFEAA500DF79DE /* ComuniViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComuniViewController.h; sourceTree = "<group>"; };
 		470CD2B917CFEAA500DF79DE /* ComuniViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComuniViewController.m; sourceTree = "<group>"; };
+		4711E18E183B6A4B00EED72F /* Avvisi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avvisi.h; sourceTree = "<group>"; };
+		4711E18F183B6A4B00EED72F /* Avvisi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avvisi.m; sourceTree = "<group>"; };
+		4711E191183B6E3B00EED72F /* AvvisiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvvisiViewController.h; sourceTree = "<group>"; };
+		4711E192183B6E3B00EED72F /* AvvisiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvvisiViewController.m; sourceTree = "<group>"; };
+		4711E19A183CF4C800EED72F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		47D2752818336BFE00D72F15 /* ic_iconoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_iconoff.png; sourceTree = "<group>"; };
 		47D2752A18336C0400D72F15 /* ic_iconon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_iconon.png; sourceTree = "<group>"; };
 		47D2752C18337D3000D72F15 /* backhome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backhome.jpg; sourceTree = "<group>"; };
+		47D2752E18366D6500D72F15 /* CassonettiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CassonettiViewController.h; sourceTree = "<group>"; };
+		47D2752F18366D6500D72F15 /* CassonettiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CassonettiViewController.m; sourceTree = "<group>"; };
+		47D2753118366E1B00D72F15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		47D275331836780800D72F15 /* CentriRaccoltaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentriRaccoltaViewController.h; sourceTree = "<group>"; };
+		47D275341836780800D72F15 /* CentriRaccoltaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentriRaccoltaViewController.m; sourceTree = "<group>"; };
+		47D2759118367BBD00D72F15 /* Cassonetto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cassonetto.h; path = ../Cassonetto.h; sourceTree = "<group>"; };
+		47D2759218367BBD00D72F15 /* Cassonetto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cassonetto.m; path = ../Cassonetto.m; sourceTree = "<group>"; };
+		47D2759418367BBD00D72F15 /* CentriRaccolta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CentriRaccolta.h; path = ../CentriRaccolta.h; sourceTree = "<group>"; };
+		47D2759518367BBD00D72F15 /* CentriRaccolta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CentriRaccolta.m; path = ../CentriRaccolta.m; sourceTree = "<group>"; };
+		47D28751183A0643006A15F6 /* CalendarioDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarioDetail.h; sourceTree = "<group>"; };
+		47D28752183A0643006A15F6 /* CalendarioDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioDetail.m; sourceTree = "<group>"; };
+		47D28754183A53D3006A15F6 /* ann_000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ann_000.png; sourceTree = "<group>"; };
+		47D28756183A6049006A15F6 /* CalendarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarioViewController.h; sourceTree = "<group>"; };
+		47D28757183A6049006A15F6 /* CalendarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioViewController.m; sourceTree = "<group>"; };
 		47EECAD2182D199B005FD4E4 /* Province.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Province.h; sourceTree = "<group>"; };
 		47EECAD3182D199B005FD4E4 /* Province.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Province.m; sourceTree = "<group>"; };
 		47EECAD5182D199C005FD4E4 /* TipiRicicloComuni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipiRicicloComuni.h; sourceTree = "<group>"; };
@@ -120,10 +150,10 @@
 		47EECAE2182D199C005FD4E4 /* Zone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zone.m; sourceTree = "<group>"; };
 		47EECAE71830E8C5005FD4E4 /* DateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
 		47EECAE81830E8C5005FD4E4 /* DateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
-		47EECAEE18312EAB005FD4E4 /* CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataMethods.h; sourceTree = "<group>"; };
-		47EECAEF18312EAB005FD4E4 /* CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataMethods.m; sourceTree = "<group>"; };
-		47EECAF018312EAB005FD4E4 /* ManagedObjectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectBase.h; sourceTree = "<group>"; };
-		47EECAF118312EAB005FD4E4 /* ManagedObjectBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectBase.m; sourceTree = "<group>"; };
+		47EECAEE18312EAB005FD4E4 /* CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataMethods.h; path = ../CoreDataMethods.h; sourceTree = "<group>"; };
+		47EECAEF18312EAB005FD4E4 /* CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataMethods.m; path = ../CoreDataMethods.m; sourceTree = "<group>"; };
+		47EECAF018312EAB005FD4E4 /* ManagedObjectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManagedObjectBase.h; path = ../ManagedObjectBase.h; sourceTree = "<group>"; };
+		47EECAF118312EAB005FD4E4 /* ManagedObjectBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectBase.m; path = ../ManagedObjectBase.m; sourceTree = "<group>"; };
 		47F6222B17E8627300295CAE /* IoRiciclo57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IoRiciclo57.png; path = ../IoRiciclo57.png; sourceTree = "<group>"; };
 		47F6222D17E8627800295CAE /* IoRiciclo114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IoRiciclo114.png; path = ../IoRiciclo114.png; sourceTree = "<group>"; };
 		47F6222F17E88BAB00295CAE /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
@@ -138,6 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4711E19B183CF4C800EED72F /* QuartzCore.framework in Frameworks */,
+				47D2753218366E1B00D72F15 /* MapKit.framework in Frameworks */,
 				47EECAE4182D19D1005FD4E4 /* CoreData.framework in Frameworks */,
 				47F8CA5617ED63D8006DCB2A /* iAd.framework in Frameworks */,
 				4701CCD81789B541000E72A7 /* SystemConfiguration.framework in Frameworks */,
@@ -163,10 +195,6 @@
 		4701CC6817897132000E72A7 = {
 			isa = PBXGroup;
 			children = (
-				47EECAEE18312EAB005FD4E4 /* CoreDataMethods.h */,
-				47EECAEF18312EAB005FD4E4 /* CoreDataMethods.m */,
-				47EECAF018312EAB005FD4E4 /* ManagedObjectBase.h */,
-				47EECAF118312EAB005FD4E4 /* ManagedObjectBase.m */,
 				4701CC7A17897132000E72A7 /* IoRciclo */,
 				4701CCA117897132000E72A7 /* IoRcicloTests */,
 				4701CC7317897132000E72A7 /* Frameworks */,
@@ -186,6 +214,8 @@
 		4701CC7317897132000E72A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4711E19A183CF4C800EED72F /* QuartzCore.framework */,
+				47D2753118366E1B00D72F15 /* MapKit.framework */,
 				47F8CA5517ED63D8006DCB2A /* iAd.framework */,
 				4701CCD71789B541000E72A7 /* SystemConfiguration.framework */,
 				4701CCD51789B51C000E72A7 /* CoreData.framework */,
@@ -212,6 +242,14 @@
 				4701CC9317897132000E72A7 /* RicicloViewController.m */,
 				470075D117D12825004EE1C6 /* ProvinceViewController.h */,
 				470075D217D12825004EE1C6 /* ProvinceViewController.m */,
+				47D2752E18366D6500D72F15 /* CassonettiViewController.h */,
+				47D2752F18366D6500D72F15 /* CassonettiViewController.m */,
+				47D275331836780800D72F15 /* CentriRaccoltaViewController.h */,
+				47D275341836780800D72F15 /* CentriRaccoltaViewController.m */,
+				47D28756183A6049006A15F6 /* CalendarioViewController.h */,
+				47D28757183A6049006A15F6 /* CalendarioViewController.m */,
+				4711E191183B6E3B00EED72F /* AvvisiViewController.h */,
+				4711E192183B6E3B00EED72F /* AvvisiViewController.m */,
 				4701CC7B17897132000E72A7 /* Supporting Files */,
 			);
 			path = IoRciclo;
@@ -220,6 +258,7 @@
 		4701CC7B17897132000E72A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47D28754183A53D3006A15F6 /* ann_000.png */,
 				47D2752C18337D3000D72F15 /* backhome.jpg */,
 				47D2752A18336C0400D72F15 /* ic_iconon.png */,
 				47D2752818336BFE00D72F15 /* ic_iconoff.png */,
@@ -263,6 +302,10 @@
 			isa = PBXGroup;
 			children = (
 				4701CCC617897218000E72A7 /* IoRiciclo.xcdatamodeld */,
+				47D2759418367BBD00D72F15 /* CentriRaccolta.h */,
+				47D2759518367BBD00D72F15 /* CentriRaccolta.m */,
+				47D2759118367BBD00D72F15 /* Cassonetto.h */,
+				47D2759218367BBD00D72F15 /* Cassonetto.m */,
 				47EECAE1182D199C005FD4E4 /* Zone.h */,
 				47EECAE2182D199C005FD4E4 /* Zone.m */,
 				47EECADE182D199C005FD4E4 /* GiorniRiciclo.h */,
@@ -275,6 +318,10 @@
 				47EECAD6182D199C005FD4E4 /* TipiRicicloComuni.m */,
 				47EECAD2182D199B005FD4E4 /* Province.h */,
 				47EECAD3182D199B005FD4E4 /* Province.m */,
+				47D28751183A0643006A15F6 /* CalendarioDetail.h */,
+				47D28752183A0643006A15F6 /* CalendarioDetail.m */,
+				4711E18E183B6A4B00EED72F /* Avvisi.h */,
+				4711E18F183B6A4B00EED72F /* Avvisi.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -282,6 +329,10 @@
 		4701CCB6178971CD000E72A7 /* BaseUtils */ = {
 			isa = PBXGroup;
 			children = (
+				47EECAEE18312EAB005FD4E4 /* CoreDataMethods.h */,
+				47EECAEF18312EAB005FD4E4 /* CoreDataMethods.m */,
+				47EECAF018312EAB005FD4E4 /* ManagedObjectBase.h */,
+				47EECAF118312EAB005FD4E4 /* ManagedObjectBase.m */,
 				4701CCB7178971F0000E72A7 /* MyApplicationSingleton.h */,
 				4701CCB8178971F0000E72A7 /* MyApplicationSingleton.m */,
 				4701CCB9178971F0000E72A7 /* Reachability.h */,
@@ -377,6 +428,7 @@
 				47F6222C17E8627300295CAE /* IoRiciclo57.png in Resources */,
 				47F6222E17E8627800295CAE /* IoRiciclo114.png in Resources */,
 				47F6223017E88BAB00295CAE /* alarm.png in Resources */,
+				47D28755183A53D3006A15F6 /* ann_000.png in Resources */,
 				47D2752D18337D3000D72F15 /* backhome.jpg in Resources */,
 				47F6223217E88F3500295CAE /* Salarm2.png in Resources */,
 				47F6223417E88F9900295CAE /* alarm3.png in Resources */,
@@ -417,6 +469,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47EECADA182D199C005FD4E4 /* Comuni.m in Sources */,
+				47D2753018366D6500D72F15 /* CassonettiViewController.m in Sources */,
+				47D275351836780800D72F15 /* CentriRaccoltaViewController.m in Sources */,
 				47EECAF218312EAB005FD4E4 /* CoreDataMethods.m in Sources */,
 				47EECADD182D199C005FD4E4 /* TipiRiciclo.m in Sources */,
 				4701CC8117897132000E72A7 /* main.m in Sources */,
@@ -424,15 +478,21 @@
 				4701CC9417897132000E72A7 /* RicicloViewController.m in Sources */,
 				4701CCC1178971F0000E72A7 /* MyApplicationSingleton.m in Sources */,
 				47EECAE91830E8C5005FD4E4 /* DateHelper.m in Sources */,
+				47D2759618367BBD00D72F15 /* CentriRaccolta.m in Sources */,
 				47EECAD7182D199C005FD4E4 /* TipiRicicloComuni.m in Sources */,
 				4701CCC2178971F0000E72A7 /* Reachability.m in Sources */,
 				47EECAF318312EAB005FD4E4 /* ManagedObjectBase.m in Sources */,
 				4701CCC4178971F0000E72A7 /* Connector.m in Sources */,
+				4711E190183B6A4B00EED72F /* Avvisi.m in Sources */,
 				47EECAD4182D199B005FD4E4 /* Province.m in Sources */,
 				4701CCC5178971F0000E72A7 /* Syncronizer.m in Sources */,
+				47D2759318367BBD00D72F15 /* Cassonetto.m in Sources */,
+				47D28753183A0643006A15F6 /* CalendarioDetail.m in Sources */,
 				4701CCC817897218000E72A7 /* IoRiciclo.xcdatamodeld in Sources */,
+				4711E193183B6E3B00EED72F /* AvvisiViewController.m in Sources */,
 				470CD2BA17CFEAA500DF79DE /* ComuniViewController.m in Sources */,
 				47EECAE3182D199C005FD4E4 /* Zone.m in Sources */,
+				47D28758183A6049006A15F6 /* CalendarioViewController.m in Sources */,
 				470075D317D12825004EE1C6 /* ProvinceViewController.m in Sources */,
 				47EECAE0182D199C005FD4E4 /* GiorniRiciclo.m in Sources */,
 			);

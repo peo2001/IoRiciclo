@@ -13,7 +13,12 @@
 #import "TipiRiciclo.h"
 #import "GiorniRiciclo.h"
 #import "Province.h"
-#import <XTM_Communication/XTM_Communication.h>
+#import "CentriRaccolta.h"
+#import "Cassonetto.h"
+#import "CalendarioDetail.h"
+#import "Avvisi.h"
+#import <CoreData/CoreData.h>
+#import "ManagedObjectBase.h"
 
 #import "MyApplicationSingleton.h"
 
@@ -28,7 +33,7 @@
 
 @interface Syncronizer : NSObject
 {
-     RemoteConnector * myRemoteConnector;
+     //RemoteConnector * myRemoteConnector;
 }
 
 @property (nonatomic, retain) id <SyncronizerDelegate> delegate;
@@ -38,7 +43,9 @@
 +(NSMutableArray *)SyncZone:(NSNumber *)IdComune;
 +(NSMutableArray *)SyncGiorniRiciclo:(NSDate *) data;
 +(NSMutableArray *)SyncTipiRiciclo;
-
++(NSMutableArray *)SyncCassonetti;
++(NSMutableArray *)SyncCentriRaccolta;
++(void)SyncAvvisi;
 
 
 @end

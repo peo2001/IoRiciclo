@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "DateHelper.h"
-#import <XTM_CoreData/XTM_CoreData.h>
+#import <CoreData/CoreData.h>
+#import "ManagedObjectBase.h"
 
 
 @interface GiorniRiciclo : ManagedObjectBase

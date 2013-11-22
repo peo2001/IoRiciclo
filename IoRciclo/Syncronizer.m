@@ -16,9 +16,9 @@
 {
     
    
-    //return [NSString stringWithFormat:@"http://hq1.xtremesoftware.it/ioriciclo/webservices/"];
+    return [NSString stringWithFormat:@"http://hq1.xtremesoftware.it/ioriciclo/webservices/"];
    // return [NSString stringWithFormat:@"http://kiss/IoRiciclo/WebServices/"];
-   return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
+   //return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
 }
 
 +(NSMutableArray *)SyncComuni:(NSNumber *)IdProvincia
@@ -90,6 +90,8 @@
     return zone;
     
 }
+
+
 
 +(void)SyncProvince
 {
@@ -219,6 +221,134 @@
     return gorniriciclo;
     
 }
+
++(NSMutableArray *)SyncCentriRaccolta
+{
+    NSMutableArray * centriraccolta;
+    centriraccolta =nil;
+    
+    centriraccolta=[CentriRaccolta RC_perComune:[MyApplicationSingleton getIdComune]];
+    
+    NSString *UrlRequest = [NSString stringWithFormat: @"%@%@",[self UrlRequest],[CentriRaccolta UrlRequest]];
+    NSString* s2= [NSString stringWithFormat: @"?IdComune=%@",  [MyApplicationSingleton getIdComune]];
+    
+    NSString *fullUrlRequest =[UrlRequest stringByAppendingString:s2];
+    
+    NSString* encodedUrl = [fullUrlRequest stringByAddingPercentEscapesUsingEncoding:
+                            NSASCIIStringEncoding];
+    
+    //se il teefono è connesso
+    if ([Connector connected])
+    {
+        
+        for(CentriRaccolta *centro in centriraccolta )
+        {
+            //elimino i luogh vecchi
+            [CentriRaccolta Delete: centro];
+            
+        }
+        NSLog(@"fullUrlRequest: %@",encodedUrl);
+        NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]]);
+        //recuper il plist dalla rete
+        NSMutableDictionary *DictionaryCentri = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]];
+        
+        centriraccolta = nil;
+        //parso l'xml del plist
+        centriraccolta= [CentriRaccolta _parseXmlDictionary:DictionaryCentri];
+        //salvo i nuovi luoghi
+        [CentriRaccolta Save];
+        
+        
+    }
+    return centriraccolta;
+    
+}
+
++(NSMutableArray *)SyncCassonetti
+{
+    NSMutableArray * cassonetti;
+    cassonetti =nil;
+    
+    cassonetti=[Cassonetto RC_ ];
+    
+    
+    NSString *UrlRequest = [NSString stringWithFormat: @"%@%@",[self UrlRequest],[Cassonetto UrlRequest]];
+    NSString* s2= [NSString stringWithFormat: @"?IdComune=%@",  [MyApplicationSingleton getIdComune]];
+    NSString* s3= [NSString stringWithFormat: @"&Data=%@",[self normalizedDateWithDate:[NSDate date] ]  ];
+    
+    NSString *fullUrlRequest =[UrlRequest stringByAppendingString:s2];
+    fullUrlRequest =[fullUrlRequest stringByAppendingString:s3];
+    
+    
+    NSString* encodedUrl = [fullUrlRequest stringByAddingPercentEscapesUsingEncoding:
+                            NSASCIIStringEncoding];
+    
+    //se il teefono è connesso
+    if ([Connector connected])
+    {
+        
+        for(Cassonetto *cassonetto in cassonetti )
+        {
+            //elimino i luogh vecchi
+            [Cassonetto Delete: cassonetto];
+            
+        }
+        NSLog(@"fullUrlRequest: %@",encodedUrl);
+        //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]]);
+        //recuper il plist dalla rete
+        NSMutableDictionary *DictionaryCassonetti = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:encodedUrl]];
+        
+        cassonetti = nil;
+        //parso l'xml del plist
+        cassonetti= [Cassonetto _parseXmlDictionary:DictionaryCassonetti];
+        //salvo i nuovi luoghi
+        [Cassonetto Save];
+        
+        
+    }
+    return cassonetti;
+    
+}
+
++(void)SyncAvvisi
+
+{
+    NSFetchedResultsController * avvisi;
+    avvisi =nil;
+    
+    // NSString *UrlRequest = [Province UrlRequest];
+    NSString *fullUrlRequest =[NSString stringWithFormat: @"%@%@%@%@",[self UrlRequest],[Avvisi UrlRequest], @"?IdComune=",  [MyApplicationSingleton getIdComune]];
+    
+    avvisi = [Avvisi RC_Fetch:[MyApplicationSingleton getIdComune] : @"datacreazione"];
+    
+    NSLog(@"avvisi size %lu",(unsigned long)avvisi.fetchedObjects.count);
+    
+    //se il teefono è connesso
+    if ([Connector connected])
+    {
+        for(Avvisi *avviso in avvisi.fetchedObjects )
+        {
+            //elimino i luogh vecchi
+            [Avvisi Delete: avviso];
+            
+        }
+        
+         NSLog(@"full request: %@",fullUrlRequest);
+        //recuper il plist dalla rete
+        NSMutableDictionary *DictionaryAvvisi = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]];
+        //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
+        avvisi = nil;
+        //parso l'xml del plist
+        [Avvisi _parseXmlDictionary:DictionaryAvvisi];
+        //salvo i nuovi luoghi
+        [Avvisi Save];
+        
+        
+    }
+    
+}
+
+
 
 
 @end

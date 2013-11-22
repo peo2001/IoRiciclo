@@ -10,6 +10,7 @@
 
 @implementation ManagedObjectBase
 
+@synthesize managedObjectContext;
 
 +(void) AddPredicate: (NSString *) Predicate
 {
@@ -143,6 +144,7 @@
  return __fetchedResultsController;
  }
  */
+
 
 - (NSManagedObjectContext *) managedObjectContext {
     

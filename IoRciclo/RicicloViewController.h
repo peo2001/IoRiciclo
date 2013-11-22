@@ -66,6 +66,10 @@
 
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
 
+
+@property (strong, nonatomic) IBOutlet UIButton *btnCassonetti;
+@property (strong, nonatomic) IBOutlet UIButton *btnCentriRaccolta;
+@property (strong, nonatomic) IBOutlet UIButton *btnAvvisi;
 //@property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
 

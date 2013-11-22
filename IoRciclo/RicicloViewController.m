@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad
 {
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -35,11 +36,6 @@
     CGFloat screenWidth = screenSize.width;
     CGFloat screenHeight = screenSize.height;
     
-  //  NSLog(@"screenWidth :%f",screenWidth);
-    
-   // NSLog(@"screenHeight :%f",screenHeight);
-    
-    
     CGRect frame = CGRectMake(0, 0, screenWidth, screenHeight);
     
     
@@ -49,13 +45,11 @@
     //imposta la variabile che indica se la view della notifica è disegnata
     alarmViewReady = false;
     
-    [self.navigationController setNavigationBarHidden:YES ];
     
     currentDate = [self dateAdd :[NSDate date]:1];
     //NSLog(@"%@",[NSDate date]);
     [self createToolbar];
-    
-   // self.lblData.backgroundColor=[UIColor colorWithRed:50.0f/255.0f green:170.0f/255.0f blue:40.0f/255.0f alpha:0.5f];
+    [self.navigationController setNavigationBarHidden:YES ];
     
     self.lblData.text = [NSString stringWithFormat:@"%@ ",[self normalizedDateWithDate:currentDate ] ];
     self.imageView.image = nil;
@@ -63,15 +57,20 @@
     self.lblTipoRiciclo.text = [NSString stringWithFormat:@"Nessun Riciclo"];
     
     //se sono stati impostati comune e zona disegna la view di giorni riciclo
-    if ([MyApplicationSingleton getIdComune]!=0  && [MyApplicationSingleton getIdComune]!=0)
+    if ([MyApplicationSingleton getIdComune]!=0  && [MyApplicationSingleton getIdZona]!=0)
     {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [self performSelectorInBackground:@selector(refreshView:) withObject:currentDate];
-        
+        self.btnCassonetti.enabled = TRUE;
+        self.btnCentriRaccolta.enabled = TRUE;
+        self.btnAvvisi.enabled=TRUE;
         
     }
     else
     {
+        self.btnCassonetti.enabled = FALSE;
+        self.btnCentriRaccolta.enabled = FALSE;
+        self.btnAvvisi.enabled=FALSE;
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"IoRiciclo"
                                                           message:@"Attenzione non Hai Ancora Selezionato un Comune"
                                                          delegate:nil
@@ -104,9 +103,7 @@
 
     if ([MyApplicationSingleton getIdComune]!=0  && [MyApplicationSingleton getIdZona]!=0)
     {
-       // NSLog(@"my app idcomune %@",[MyApplicationSingleton getIdComune]);
         
-     
         NSArray * arrComune = [Comuni RC_Comune:[MyApplicationSingleton getIdComune]];
         NSArray * arrZona = [Zone RC_:[MyApplicationSingleton getIdZona]];
         if (([arrComune count]>0) && ([arrZona count] >0))
@@ -173,7 +170,7 @@
     
     currentDate = [NSDate date];
     self.lblData.text =[df stringFromDate:myDate].uppercaseString;
-    [self createToolbar];
+    //[self createToolbar];
     
     self.imageView.image = nil;
     self.lblTipoRiciclo.text = [NSString stringWithFormat:@"Nessun Riciclo"];
@@ -815,46 +812,7 @@
      [message show];
 
 }
-/*
-- (CGFloat)tableView:(UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *)indexPath    {
-    CGSize cellHeight;
-    
-    NSString * myString;
-    
-    if (tableView == self.tvOggi) {
-        
-        GiorniRiciclo *GiornoRiciclo = [GiorniRiciclaggio objectAtIndex:indexPath.item];
-        myString = [GiornoRiciclo tiporiciclo];
-        // cell.detailTextLabel.text = [info provincia];
-        
-    }
-    
-    if (tableView == self.tvDomani) {
-        
-        GiorniRiciclo *GiornoRiciclo = [GiorniRiciclaggioDomani objectAtIndex:indexPath.item];
-        myString = [GiornoRiciclo tiporiciclo];
-        
-    }
-    if (tableView == self.tvDopoDomani) {
-        
-        GiorniRiciclo *GiornoRiciclo = [GiorniRiciclaggioDopodomani objectAtIndex:indexPath.item];
-        myString = [GiornoRiciclo tiporiciclo];
-        
-    }
-    if (tableView == self.tv3Giorni) {
-        
-        GiorniRiciclo *GiornoRiciclo = [GiorniRiciclaggio3Giorni objectAtIndex:indexPath.item];
-        myString = [GiornoRiciclo tiporiciclo];
-        
-    }
 
-    
-    cellHeight = [myString sizeWithFont:[UIFont systemFontOfSize:8.0f] constrainedToSize:CGSizeMake(300.0, 1000.0) lineBreakMode:NSLineBreakByWordWrapping];
-    return cellHeight.height;
-}
- */
-
-//fine table view
 
 //FINE SEZIONE NOTIFICHE
 

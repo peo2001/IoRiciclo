@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <XTM_CoreData/XTM_CoreData.h>
+#import <CoreData/CoreData.h>
+#import "ManagedObjectBase.h"
 
 
 

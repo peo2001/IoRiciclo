@@ -101,7 +101,7 @@ static CoreDataMethods *instance=nil;
     
     NSLog(@"IL PATH:%@",[self applicationDocumentsDirectory]);
     
-    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"IoRiciclo.sqlite"]];
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"IoRiciclo3.sqlite"]];
     
     NSError *error = nil;
     
