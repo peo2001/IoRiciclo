@@ -58,10 +58,6 @@
 		47EECAF318312EAB005FD4E4 /* ManagedObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EECAF118312EAB005FD4E4 /* ManagedObjectBase.m */; };
 		47F6222C17E8627300295CAE /* IoRiciclo57.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6222B17E8627300295CAE /* IoRiciclo57.png */; };
 		47F6222E17E8627800295CAE /* IoRiciclo114.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6222D17E8627800295CAE /* IoRiciclo114.png */; };
-		47F6223017E88BAB00295CAE /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6222F17E88BAB00295CAE /* alarm.png */; };
-		47F6223217E88F3500295CAE /* Salarm2.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6223117E88F3500295CAE /* Salarm2.png */; };
-		47F6223417E88F9900295CAE /* alarm3.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6223317E88F9900295CAE /* alarm3.png */; };
-		47F6223817E8A50200295CAE /* noalarm2.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6223717E8A50200295CAE /* noalarm2.png */; };
 		47F8CA5617ED63D8006DCB2A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F8CA5517ED63D8006DCB2A /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,10 +152,6 @@
 		47EECAF118312EAB005FD4E4 /* ManagedObjectBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectBase.m; path = ../ManagedObjectBase.m; sourceTree = "<group>"; };
 		47F6222B17E8627300295CAE /* IoRiciclo57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IoRiciclo57.png; path = ../IoRiciclo57.png; sourceTree = "<group>"; };
 		47F6222D17E8627800295CAE /* IoRiciclo114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IoRiciclo114.png; path = ../IoRiciclo114.png; sourceTree = "<group>"; };
-		47F6222F17E88BAB00295CAE /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
-		47F6223117E88F3500295CAE /* Salarm2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Salarm2.png; sourceTree = "<group>"; };
-		47F6223317E88F9900295CAE /* alarm3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm3.png; sourceTree = "<group>"; };
-		47F6223717E8A50200295CAE /* noalarm2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noalarm2.png; sourceTree = "<group>"; };
 		47F8CA5517ED63D8006DCB2A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -262,10 +254,6 @@
 				47D2752C18337D3000D72F15 /* backhome.jpg */,
 				47D2752A18336C0400D72F15 /* ic_iconon.png */,
 				47D2752818336BFE00D72F15 /* ic_iconoff.png */,
-				47F6223717E8A50200295CAE /* noalarm2.png */,
-				47F6223317E88F9900295CAE /* alarm3.png */,
-				47F6223117E88F3500295CAE /* Salarm2.png */,
-				47F6222F17E88BAB00295CAE /* alarm.png */,
 				47F6222D17E8627800295CAE /* IoRiciclo114.png */,
 				47F6222B17E8627300295CAE /* IoRiciclo57.png */,
 				4701CC7C17897132000E72A7 /* IoRciclo-Info.plist */,
@@ -432,12 +420,8 @@
 				4701CC9117897132000E72A7 /* MainStoryboard_iPad.storyboard in Resources */,
 				47F6222C17E8627300295CAE /* IoRiciclo57.png in Resources */,
 				47F6222E17E8627800295CAE /* IoRiciclo114.png in Resources */,
-				47F6223017E88BAB00295CAE /* alarm.png in Resources */,
 				47D28755183A53D3006A15F6 /* ann_000.png in Resources */,
 				47D2752D18337D3000D72F15 /* backhome.jpg in Resources */,
-				47F6223217E88F3500295CAE /* Salarm2.png in Resources */,
-				47F6223417E88F9900295CAE /* alarm3.png in Resources */,
-				47F6223817E8A50200295CAE /* noalarm2.png in Resources */,
 				47D2752B18336C0400D72F15 /* ic_iconon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -81,6 +81,21 @@
     
     return [gregorian dateByAddingComponents:components toDate:data options:0];;
 }
++(NSDate *)DateTimeZone: (NSDate *)Data
+{
+    //NSDate* date = [NSDate date];
+    NSTimeZone* currentTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* nowTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger currentGMTOffset = [currentTimeZone secondsFromGMTForDate:Data];
+    NSInteger nowGMTOffset = [nowTimeZone secondsFromGMTForDate:Data];
+    
+    NSTimeInterval interval = nowGMTOffset - currentGMTOffset;
+    NSDate* nowDate = [[NSDate alloc] initWithTimeInterval:interval sinceDate:Data];
+    return nowDate;
+    
+}
+
 
 
 @end

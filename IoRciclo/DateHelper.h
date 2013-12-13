@@ -15,6 +15,6 @@
 + (NSDate *)dataFineGiorno:(NSDate *) data;
 + (NSDate *)dateWithNoTime:(NSDate *)dateTime;
 + (NSDate *)dateAdd:(NSDate*)data :(uint)daysToAdd;
-
++ (NSDate *)DateTimeZone: (NSDate *)Data;
 
 @end

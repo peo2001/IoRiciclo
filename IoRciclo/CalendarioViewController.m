@@ -8,6 +8,11 @@
 
 #import "CalendarioViewController.h"
 
+#define FONT_SIZE 14.0f
+#define FONT_SIZETITLE 14.0f
+#define CELL_CONTENT_WIDTH 320.0f
+#define CELL_CONTENT_MARGIN 10.0f
+
 @interface CalendarioViewController ()
 
 @end
@@ -93,19 +98,52 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
+    
+    //prova
+    
+     UILabel *label  = [[UILabel alloc] initWithFrame:CGRectZero];
+    [label setLineBreakMode:NSLineBreakByWordWrapping];
+    // [label setMinimumFontSize:FONT_SIZE];
+    [label setNumberOfLines:0];
+    //[labelUser setFont:[UIFont fontWithName:@"fontname" size:FONT_SIZE ]];
+    [label setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
+    [label setTextColor:[UIColor whiteColor]];
+    
+    
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
+    
+    CGSize size = [Descrizione sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+    
+    label.backgroundColor = [UIColor grayColor];
+    [label setText:Descrizione];
+   
+    
+    [label setFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN, CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), size.height)];
+    
+   // NSLog(@"height %f",size.height);
+    
+    //fine prova
+    
+    
+   /* UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
     label.numberOfLines = 2;
     label.textColor=[UIColor whiteColor];
     //label.text = [NSString stringWithFormat:@"Calendario Raccolta:\n%@",Descrizione ];
     label.text = Descrizione;
     label.textAlignment=NSTextAlignmentCenter;
     label.backgroundColor = [UIColor grayColor];
+    */
     return [label autorelease];
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44.0;
+    
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
+    
+    
+    CGSize size = [Descrizione sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+    return size.height;
 }
  
 @end

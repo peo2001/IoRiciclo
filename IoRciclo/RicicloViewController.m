@@ -28,8 +28,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   // numberOfDay = 0;
+    // numberOfDay = 0;
     
+    self.imageViewBackground.layer.cornerRadius = 5;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
@@ -81,7 +82,7 @@
         
         [message show];
         
-               
+        
     }
     self.tvDomani.delegate= self;
     self.tvDopoDomani.delegate= self;
@@ -89,10 +90,10 @@
     
     
     //iad
-   // [self createAdBannerView];
+    // [self createAdBannerView];
     //[self.view addSubview:self.adBannerView];
     //fine iad
-
+    
 }
 
 
@@ -100,7 +101,7 @@
 - (void)createToolbar {
     
     NSString * stringTitle = [NSString stringWithFormat:@"Seleziona Comune"];
-
+    
     if ([MyApplicationSingleton getIdComune]!=0  && [MyApplicationSingleton getIdZona]!=0)
     {
         
@@ -111,21 +112,21 @@
             stringTitle = [NSString stringWithFormat:@"%@ Zona %@",[[arrComune objectAtIndex:0] comune],[[arrZona objectAtIndex:0] zona] ];
         }
     }
-
+    
     UIBarButtonItem *comune = [[UIBarButtonItem alloc] initWithTitle:stringTitle style:UIBarButtonItemStyleBordered target:self action:@selector(pickProvincia)];
     
     [comune setTintColor:[UIColor whiteColor]];
     
     
-      if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"AlarmSet"] isEqualToString:@"S" ])
+    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"AlarmSet"] isEqualToString:@"S" ])
     {
-    
+        
         alarm = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_iconon.png" ] style:UIBarButtonItemStyleBordered  target:self action:@selector(pickAlarm)];
         [alarm setTintColor:[UIColor whiteColor]];
         
     }else
     {
-       
+        
         alarm = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_iconoff.png" ] style:UIBarButtonItemStyleBordered  target:self action:@selector(pickAlarm)];
         [alarm setTintColor:[UIColor whiteColor]];
     }
@@ -168,7 +169,8 @@
     [df setLocale:frLocale];
     
     
-    currentDate = [NSDate date];
+    currentDate = [DateHelper DateTimeZone:[NSDate date]];
+    NSLog (@"curr date %@", currentDate);
     self.lblData.text =[NSString stringWithFormat:@"Prossimo Riciclo %@", [df stringFromDate:myDate].uppercaseString ];
     //[self createToolbar];
     
@@ -181,8 +183,8 @@
     self.tvDopoDomani.hidden = TRUE;
     self.tv3Giorni.hidden = TRUE;
     self.tvOggi.hidden = TRUE;
-
-
+    
+    
     //sinocronizzazione da remoto
     GiorniRiciclaggio = [Syncronizer SyncGiorniRiciclo : currentDate];
     
@@ -194,12 +196,13 @@
         currentDate =[self dateAdd : currentDate:1];
     
     
+    
     //oggi
     //recupero i tipi di riciclo dal db interno per il giorno di oggi
     
     //NB:al massimo recupero due tipi di riciclo per giorno
     GiorniRiciclaggio = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currentDate ] :[DateHelper dataFineGiorno:currentDate ]];
-   
+    
     if ([GiorniRiciclaggio count] > 2)
     {
         self.lblTipoRiciclo.text = [NSString stringWithFormat:@""];
@@ -231,7 +234,7 @@
     myDate = [self dateAdd : currentDate:1];
     
     self.lblDomani.text =[df stringFromDate:myDate].uppercaseString;
-
+    
     //verifico che nel giorno di domani ci siano più di due elementi
     if ([GiorniRiciclaggioDomani count] > 2 )
     {
@@ -239,7 +242,7 @@
     }
     else{
         
-   
+        
         if ([GiorniRiciclaggioDomani count] > 0 )
         {
             self.lblTipoRicicloDomani.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggioDomani objectAtIndex:0]tiporiciclo]];
@@ -268,27 +271,27 @@
         self.tvDopoDomani.hidden = FALSE;
     }
     else{
-    
-    if ([GiorniRiciclaggioDopodomani count] > 0 )
-    {
-        self.lblTipoRicicloDopodomani.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggioDopodomani objectAtIndex:0]tiporiciclo]];
-        [self setImmagineInButton:0  :_btnDopodomani : [GiorniRiciclaggioDopodomani objectAtIndex:0]];
-    }
-    
-    if ([GiorniRiciclaggioDopodomani count] > 1 )
-    {
-       self.lblTipoRicicloDopodomani.text = [NSString stringWithFormat:@"%@-%@",self.lblTipoRicicloDopodomani.text,[[GiorniRiciclaggioDopodomani objectAtIndex:1]tiporiciclo]];
-        [self setImmagineInButton:1  :_btnDopodomani2 : [GiorniRiciclaggioDopodomani objectAtIndex:1]];
         
-    }
+        if ([GiorniRiciclaggioDopodomani count] > 0 )
+        {
+            self.lblTipoRicicloDopodomani.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggioDopodomani objectAtIndex:0]tiporiciclo]];
+            [self setImmagineInButton:0  :_btnDopodomani : [GiorniRiciclaggioDopodomani objectAtIndex:0]];
+        }
+        
+        if ([GiorniRiciclaggioDopodomani count] > 1 )
+        {
+            self.lblTipoRicicloDopodomani.text = [NSString stringWithFormat:@"%@-%@",self.lblTipoRicicloDopodomani.text,[[GiorniRiciclaggioDopodomani objectAtIndex:1]tiporiciclo]];
+            [self setImmagineInButton:1  :_btnDopodomani2 : [GiorniRiciclaggioDopodomani objectAtIndex:1]];
+            
+        }
     }
     //tregiorni
     
     GiorniRiciclaggio3Giorni = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:[self dateAdd : currentDate:3] ] :[DateHelper dataFineGiorno:[self dateAdd : currentDate:3] ]];
     
-   
+    
     myDate = [self dateAdd : currentDate:3];
-   
+    
     self.lblTreGiorni.text =[df stringFromDate:myDate].uppercaseString;
     
     if ([GiorniRiciclaggio3Giorni count] > 2 )
@@ -296,28 +299,28 @@
         self.tv3Giorni.hidden = FALSE;
     }
     else{
-    
-    if ([GiorniRiciclaggio3Giorni count] > 0 )
-    {
-        self.lblTipoRicicloTreGiorni.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggio3Giorni objectAtIndex:0]tiporiciclo]];
-        [self setImmagineInButton:0  :_btnTreGiorni : [GiorniRiciclaggio3Giorni objectAtIndex:0]];
-    }
-    
-    
-    if ([GiorniRiciclaggio3Giorni count] > 1 )
-    {
-       self.lblTipoRicicloTreGiorni.text = [NSString stringWithFormat:@"%@-%@",self.lblTipoRicicloTreGiorni.text,[[GiorniRiciclaggio3Giorni objectAtIndex:1]tiporiciclo]];
         
-        [self setImmagineInButton:1 :_btnTreGiorni2 : [GiorniRiciclaggio3Giorni objectAtIndex:1]];
+        if ([GiorniRiciclaggio3Giorni count] > 0 )
+        {
+            self.lblTipoRicicloTreGiorni.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggio3Giorni objectAtIndex:0]tiporiciclo]];
+            [self setImmagineInButton:0  :_btnTreGiorni : [GiorniRiciclaggio3Giorni objectAtIndex:0]];
+        }
+        
+        
+        if ([GiorniRiciclaggio3Giorni count] > 1 )
+        {
+            self.lblTipoRicicloTreGiorni.text = [NSString stringWithFormat:@"%@-%@",self.lblTipoRicicloTreGiorni.text,[[GiorniRiciclaggio3Giorni objectAtIndex:1]tiporiciclo]];
+            
+            [self setImmagineInButton:1 :_btnTreGiorni2 : [GiorniRiciclaggio3Giorni objectAtIndex:1]];
+        }
     }
-    }
-
+    
     [self.tvOggi reloadData];
     [self.tvDomani reloadData];
     [self.tvDopoDomani reloadData];
     [self.tv3Giorni reloadData];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
+    
 }
 
 
@@ -340,7 +343,7 @@
         NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
         UIImage *image = [UIImage imageWithData:imageData  scale:[UIScreen mainScreen].scale];
         dispatch_async(dispatch_get_main_queue(), ^{
-             [Button setBackgroundImage:image forState:UIControlStateNormal];
+            [Button setBackgroundImage:image forState:UIControlStateNormal];
         });
     });
     
@@ -350,7 +353,7 @@
     
     
     if ([Descrizione isEqualToString:@""])
-    {        
+    {
         Descrizione = [NSString stringWithFormat:@"%@",[GiornoRiciclo descrizione]];
         
     }
@@ -358,7 +361,7 @@
     
     Button.titleLabel.text= Descrizione;
     [Button addTarget:self
-               action:@selector(showDescription:) 
+               action:@selector(showDescription:)
      forControlEvents:UIControlEventTouchDown];
 }
 
@@ -366,7 +369,7 @@
 -(void) showDescription:(UIButton *) sender{
     
     UIButton *buttonClicked = (UIButton *)sender;
-     
+    
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"IoRiciclo"
                                                       message:buttonClicked.titleLabel.text
                                                      delegate:nil
@@ -436,18 +439,18 @@
         
         //set date components
         
-      //  NSLog(@"ora %d",[MyApplicationSingleton getOraNotifica]);
-       // NSLog(@"minuti %d",[MyApplicationSingleton getMinutiNotifica]);
+        //  NSLog(@"ora %d",[MyApplicationSingleton getOraNotifica]);
+        // NSLog(@"minuti %d",[MyApplicationSingleton getMinutiNotifica]);
         [dateComponents setHour:[MyApplicationSingleton getOraNotifica]];
         [dateComponents setMinute:[MyApplicationSingleton getMinutiNotifica]];
-        [dateComponents setSecond:0];        
+        [dateComponents setSecond:0];
         datePicker.date = [calendar dateFromComponents:dateComponents];
         datePicker.frame = CGRectMake(0, 30, 320, 250);
         [datePicker addTarget:self action:nil forControlEvents:UIControlEventValueChanged];
         
         datePicker.timeZone = [NSTimeZone systemTimeZone];
         
-       
+        
         //add toolbar
         UIToolbar * toolbar = [[UIToolbar alloc] initWithFrame: CGRectMake(0, datePicker.frame.size.height +5, 320, 35)];
         
@@ -459,30 +462,30 @@
         UIBarButtonItem *infoButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Imposta Notifica" style:UIBarButtonItemStylePlain target:self action:@selector(setAlarm)];
         infoButtonItem.width=100;
         [infoButtonItem setTitleTextAttributes:@{
-                                             UITextAttributeFont: [UIFont fontWithName:@"Helvetica-Bold" size:12.0]
-                                             } forState:UIControlStateNormal];
+                                                 UITextAttributeFont: [UIFont fontWithName:@"Helvetica-Bold" size:12.0]
+                                                 } forState:UIControlStateNormal];
         
         toolbar.items = [NSArray arrayWithObjects:infoButtonItem, nil];
         
         //add button
         UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancella Notifica" style:UIBarButtonItemStyleDone target:self action:@selector(clearNotification)];
         cancelButtonItem.width=100;
-
+        
         [cancelButtonItem setTitleTextAttributes:@{
-                                                 UITextAttributeFont: [UIFont fontWithName:@"Helvetica-Bold" size:12.0]
-                                                 } forState:UIControlStateNormal];
-
+                                                   UITextAttributeFont: [UIFont fontWithName:@"Helvetica-Bold" size:12.0]
+                                                   } forState:UIControlStateNormal];
+        
         
         UIBarButtonItem *annullaButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chiudi" style:UIBarButtonItemStyleDone target:self action:@selector(annullaNotification)];
         
         [annullaButtonItem setTitleTextAttributes:@{
-                                                   UITextAttributeFont: [UIFont fontWithName:@"Helvetica-Bold" size:12.0]
-                                                   } forState:UIControlStateNormal];
-
+                                                    UITextAttributeFont: [UIFont fontWithName:@"Helvetica-Bold" size:12.0]
+                                                    } forState:UIControlStateNormal];
+        
         
         annullaButtonItem.width=100;
         
-       
+        
         
         toolbar.items = [NSArray arrayWithObjects:infoButtonItem,cancelButtonItem,annullaButtonItem, nil];
         
@@ -521,7 +524,7 @@
     }
     
     
-
+    
 }
 
 
@@ -542,38 +545,38 @@
     return [calendar dateFromComponents:components];
     
     //fine calendar
-
+    
 }
 
 //chiama la creazione della notifca e rimuove la view di impostazione notifica
 -(void)setAlarm
 {
-   /* NSString * tiporiciclo;
-    
-    NSDate *currDate = [NSDate date];
-    
-    
-    tiporiciclo =  [[[GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currDate ] :[DateHelper dataFineGiorno:currDate ]]objectAtIndex:0]tiporiciclo];
-
-    
-    [self createnotification: tiporiciclo :[self DateTimeFromCalendar:currDate : [datePicker date]]];
-    
-    currDate = [self dateAdd : currDate:1];
-    
-    
-    tiporiciclo =  [[[GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currDate ] :[DateHelper dataFineGiorno:currDate ]]objectAtIndex:0]tiporiciclo];
-    
-    [self createnotification: tiporiciclo :[self DateTimeFromCalendar:currDate : [datePicker date]]];
-    
-    
-    currDate = [self dateAdd : currDate:2];
-    
-    tiporiciclo =  [[[GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currDate ] :[DateHelper dataFineGiorno:currDate ]]objectAtIndex:0]tiporiciclo];
-    
-    [self createnotification: tiporiciclo :[self DateTimeFromCalendar:currDate : [datePicker date]]];
-    
-    
-    */
+    /* NSString * tiporiciclo;
+     
+     NSDate *currDate = [NSDate date];
+     
+     
+     tiporiciclo =  [[[GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currDate ] :[DateHelper dataFineGiorno:currDate ]]objectAtIndex:0]tiporiciclo];
+     
+     
+     [self createnotification: tiporiciclo :[self DateTimeFromCalendar:currDate : [datePicker date]]];
+     
+     currDate = [self dateAdd : currDate:1];
+     
+     
+     tiporiciclo =  [[[GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currDate ] :[DateHelper dataFineGiorno:currDate ]]objectAtIndex:0]tiporiciclo];
+     
+     [self createnotification: tiporiciclo :[self DateTimeFromCalendar:currDate : [datePicker date]]];
+     
+     
+     currDate = [self dateAdd : currDate:2];
+     
+     tiporiciclo =  [[[GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currDate ] :[DateHelper dataFineGiorno:currDate ]]objectAtIndex:0]tiporiciclo];
+     
+     [self createnotification: tiporiciclo :[self DateTimeFromCalendar:currDate : [datePicker date]]];
+     
+     
+     */
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *dateComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit| NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:[datePicker date]];
@@ -631,7 +634,7 @@
     
     NSString * notificatxt;
     
-   // NSLog(@" datepicker %@",[datePicker date]);
+    // NSLog(@" datepicker %@",[datePicker date]);
     
     if (notification)
     {
@@ -645,15 +648,15 @@
         notificatxt = [NSString stringWithFormat:@"E' l'ora del Riciclo!"];
         notification.alertBody = notificatxt;
         [app scheduleLocalNotification:notification];
-          
+        
     }
     
     [[NSUserDefaults standardUserDefaults] setValue:@"S" forKey:@"AlarmSet"];
     [alarm setImage: [UIImage imageNamed:@"ic_iconon.png"] ] ;
-   
+    
     
     [[NSUserDefaults standardUserDefaults] synchronize];
-       
+    
 }
 
 //elimina la notifica impostata
@@ -663,7 +666,7 @@
 	
 	[[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[NSUserDefaults standardUserDefaults] setValue:@"N" forKey:@"AlarmSet"];
-
+    
     [alarm setImage: [UIImage imageNamed:@"ic_iconoff.png"] ] ;
     [alarm setTintColor:[UIColor whiteColor]];
     [newDatePickerView removeFromSuperview];
@@ -683,18 +686,18 @@
     
     if (tableView == self.tvOggi) {
         
-       GiornoRiciclo = [GiorniRiciclaggio objectAtIndex:indexPath.item];
+        GiornoRiciclo = [GiorniRiciclaggio objectAtIndex:indexPath.item];
         cell.textLabel.text = [GiornoRiciclo tiporiciclo];
         
     }
-
+    
     if (tableView == self.tvDomani) {
         
-         GiornoRiciclo = [GiorniRiciclaggioDomani objectAtIndex:indexPath.item];
+        GiornoRiciclo = [GiorniRiciclaggioDomani objectAtIndex:indexPath.item];
         textLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 5, 10, 10)] autorelease];
         
         cell.textLabel.text = [GiornoRiciclo tiporiciclo];
-       
+        
         
     }
     if (tableView == self.tvDopoDomani) {
@@ -717,32 +720,32 @@
     
     textLabel.backgroundColor=[UIColor whiteColor];
     
-   if ([GiornoRiciclo colore] != NULL)
-   {
-    
+    if ([GiornoRiciclo colore] != NULL)
+    {
+        
         unsigned rgbValue = 0;
         NSScanner *scanner = [NSScanner scannerWithString:[GiornoRiciclo colore]];
         [scanner setScanLocation:1]; // bypass '#' character
         [scanner scanHexInt:&rgbValue];
         textLabel.backgroundColor = [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
-    
-   }
+        
+    }
     
     
     textLabel.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
     //[cell.textLabel addSubview:textLabel];
-   [cell.contentView addSubview:textLabel];
+    [cell.contentView addSubview:textLabel];
     
-   /*
-   
-    UIImageView *accessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
-    
-    accessoryView.backgroundColor= [UIColor redColor];
-
-
-    [cell setAccessoryView:accessoryView];
-    [accessoryView release];
-    */
+    /*
+     
+     UIImageView *accessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
+     
+     accessoryView.backgroundColor= [UIColor redColor];
+     
+     
+     [cell setAccessoryView:accessoryView];
+     [accessoryView release];
+     */
     
     //cell.textLabel.adjustsFontSizeToFitWidth = YES;
     //cell.textLabel.numberOfLines = 2;
@@ -783,19 +786,19 @@
     
     if (tableView == self.tvOggi) {
         
-            GiornoRiciclo =[GiorniRiciclaggio objectAtIndex:indexPath.item] ;
+        GiornoRiciclo =[GiorniRiciclaggio objectAtIndex:indexPath.item] ;
     }
     if (tableView == self.tvDomani) {
-         GiornoRiciclo  =[GiorniRiciclaggioDomani objectAtIndex:indexPath.item];
+        GiornoRiciclo  =[GiorniRiciclaggioDomani objectAtIndex:indexPath.item];
     }
     if (tableView == self.tvDopoDomani) {
-         GiornoRiciclo  =[GiorniRiciclaggioDopodomani objectAtIndex:indexPath.item] ;
+        GiornoRiciclo  =[GiorniRiciclaggioDopodomani objectAtIndex:indexPath.item] ;
     }
     if (tableView == self.tv3Giorni) {
-         GiornoRiciclo = [GiorniRiciclaggio3Giorni objectAtIndex:indexPath.item];
-
+        GiornoRiciclo = [GiorniRiciclaggio3Giorni objectAtIndex:indexPath.item];
+        
     }
-
+    
     strMessage =[GiornoRiciclo descrizionepercomune];
     if ([strMessage  isEqual:@""])
     {
@@ -809,8 +812,8 @@
                                                      delegate:nil
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
-     [message show];
-
+    [message show];
+    
 }
 
 
@@ -828,11 +831,11 @@
                                         18, self.view.frame.size.width, self.toolBar.bounds.size.height);
         
         self.giorniFuturiView.frame = CGRectMake(self.imageViewBackground.bounds.size.width -50,
-                                            self.lblData.frame.origin.y, 210, 260);
+                                                 self.lblData.frame.origin.y, 210, 260);
         
     }
-   
-   
+    
+    
 }
 
 //Fine ROTAZIONE
@@ -840,71 +843,71 @@
 //iAd Banner
 
 /*
-- (void) createAdBannerView
-{
-    adBannerView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-    CGRect bannerFrame = self.adBannerView.frame;
-    bannerFrame.origin.y = self.view.frame.size.height;
-    self.adBannerView.frame = bannerFrame;
-    
-    self.adBannerView.delegate = self;
-   
-}
-
-- (void) adjustBannerView
-{
-    CGRect contentViewFrame = self.view.bounds;
-    CGRect adBannerFrame = self.adBannerView.frame;
-    
-    if([self.adBannerView isBannerLoaded])
-    {
-        CGSize bannerSize = self.adBannerView.bounds.size;
-        contentViewFrame.size.height = (contentViewFrame.size.height - bannerSize.height);
-        adBannerFrame.origin.y = contentViewFrame.size.height;
-    }
-    else
-    {
-        adBannerFrame.origin.y = contentViewFrame.size.height;
-    }
-    [UIView animateWithDuration:0.5 animations:^{
-        self.adBannerView.frame = adBannerFrame;
-        self.contentView.frame = contentViewFrame;
-    }];
-}
-
-#pragma mark - ADBannerViewDelegate
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    [self adjustBannerView];
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    [self adjustBannerView];
-}
-
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
-{
-    //TO DO
-    //Check internet connecction here
+ - (void) createAdBannerView
+ {
+ adBannerView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+ CGRect bannerFrame = self.adBannerView.frame;
+ bannerFrame.origin.y = self.view.frame.size.height;
+ self.adBannerView.frame = bannerFrame;
  
-    // if(internetNotAvailable)
-     //{
-     //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No internet." message:@"Please make sure an internet connection is available." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    // [alert show];
-     //[alert release];
-     //return NO;
-     //}
-    return YES;
-}
-
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner
-{
-    
-}
-
-*/
+ self.adBannerView.delegate = self;
+ 
+ }
+ 
+ - (void) adjustBannerView
+ {
+ CGRect contentViewFrame = self.view.bounds;
+ CGRect adBannerFrame = self.adBannerView.frame;
+ 
+ if([self.adBannerView isBannerLoaded])
+ {
+ CGSize bannerSize = self.adBannerView.bounds.size;
+ contentViewFrame.size.height = (contentViewFrame.size.height - bannerSize.height);
+ adBannerFrame.origin.y = contentViewFrame.size.height;
+ }
+ else
+ {
+ adBannerFrame.origin.y = contentViewFrame.size.height;
+ }
+ [UIView animateWithDuration:0.5 animations:^{
+ self.adBannerView.frame = adBannerFrame;
+ self.contentView.frame = contentViewFrame;
+ }];
+ }
+ 
+ #pragma mark - ADBannerViewDelegate
+ 
+ - (void)bannerViewDidLoadAd:(ADBannerView *)banner
+ {
+ [self adjustBannerView];
+ }
+ 
+ - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+ {
+ [self adjustBannerView];
+ }
+ 
+ - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+ {
+ //TO DO
+ //Check internet connecction here
+ 
+ // if(internetNotAvailable)
+ //{
+ //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No internet." message:@"Please make sure an internet connection is available." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+ // [alert show];
+ //[alert release];
+ //return NO;
+ //}
+ return YES;
+ }
+ 
+ - (void)bannerViewActionDidFinish:(ADBannerView *)banner
+ {
+ 
+ }
+ 
+ */
 
 //fine aiadbanner
 
