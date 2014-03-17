@@ -598,13 +598,13 @@
 		4701CCAD17897133000E72A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugenio Pompei (4GE8945YEB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eugenio Pompei (4GE8945YEB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IoRiciclo/IoRiciclo-Prefix.pch";
 				INFOPLIST_FILE = "IoRiciclo/IoRiciclo-Info.plist";
 				PRODUCT_NAME = IoRiciclo;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "EE3C372E-0D78-453B-ACCE-9FF769BF756E";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -613,13 +613,13 @@
 		4701CCAE17897133000E72A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: xTreme Software (S73MBBQVY2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: xTreme Software (S73MBBQVY2)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IoRiciclo/IoRiciclo-Prefix.pch";
 				INFOPLIST_FILE = "IoRiciclo/IoRiciclo-Info.plist";
 				PRODUCT_NAME = IoRiciclo;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7E305690-7CBB-4812-B9BF-BFB4AE5200D2";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
