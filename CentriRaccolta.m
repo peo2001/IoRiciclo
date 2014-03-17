@@ -1,6 +1,6 @@
 //
 //  CentriRaccolta.m
-//  IoRciclo
+//  IoRiciclo
 //
 //  Created by Maria Cristina Narcisi on 15/11/13.
 //  Copyright (c) 2013 Maria Cristina Narcisi. All rights reserved.

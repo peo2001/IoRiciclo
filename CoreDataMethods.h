@@ -10,7 +10,9 @@
 #import <CoreData/CoreData.h>
 
 
+
 @interface CoreDataMethods : NSObject
+
 {
     
     //core data
