@@ -60,13 +60,16 @@ static NSString *const iRateFirstUsedKey = @"iRateFirstUsed";
 static NSString *const iRateUseCountKey = @"iRateUseCount";
 static NSString *const iRateEventCountKey = @"iRateEventCount";
 
-static NSString *const iRateMacAppStoreBundleID = @"com.apple.appstore";
+//static NSString *const iRateMacAppStoreBundleID = @"com.apple.appstore";
 static NSString *const iRateAppLookupURLFormat = @"http://itunes.apple.com/%@/lookup";
 
-static NSString *const iRateiOSAppStoreURLScheme = @"itms-apps";
+#if TARGET_IPHONE_SIMULATOR
+    static NSString *const iRateiOSAppStoreURLScheme = @"itms-apps";
+#endif
+
 static NSString *const iRateiOSAppStoreURLFormat = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
 static NSString *const iRateiOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/app/id%@";
-static NSString *const iRateMacAppStoreURLFormat = @"macappstore://itunes.apple.com/app/id%@";
+//static NSString *const iRateMacAppStoreURLFormat = @"macappstore://itunes.apple.com/app/id%@";
 
 
 #define SECONDS_IN_A_DAY 86400.0

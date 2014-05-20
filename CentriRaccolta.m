@@ -77,9 +77,9 @@
             {
                 CentriRaccolta *centroraccolta = [CentriRaccolta Load];
                 // NSLog(@"IdMatrimonio:%@",[currentResult objectForKey:@"idmatrimonio"]);
-                centroraccolta.idcentroraccolta = [NSNumber numberWithInt:[[currentResult objectForKey:@"idcen"] integerValue]] ;
-                centroraccolta.idcomune = [NSNumber numberWithInt:[[currentResult objectForKey:@"idcom"] integerValue]] ;
-                centroraccolta.idcalendario = [NSNumber numberWithInt:[[currentResult objectForKey:@"idcal"] integerValue]] ;
+                centroraccolta.idcentroraccolta = [NSNumber numberWithLong:[[currentResult objectForKey:@"idcen"] integerValue]] ;
+                centroraccolta.idcomune = [NSNumber numberWithLong:[[currentResult objectForKey:@"idcom"] integerValue]] ;
+                centroraccolta.idcalendario = [NSNumber numberWithLong:[[currentResult objectForKey:@"idcal"] integerValue]] ;
                 
                 CLLocationDegrees latitude = [[[currentResult objectForKey:@"coordinate"] objectForKey:@"lat"] floatValue];
                 CLLocationDegrees longitude = [[[currentResult objectForKey:@"coordinate"] objectForKey:@"lon"] floatValue];

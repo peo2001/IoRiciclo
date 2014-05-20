@@ -91,9 +91,9 @@
             {
                 Cassonetto *cassonetto = [Cassonetto Load];
                 // NSLog(@"IdMatrimonio:%@",[currentResult objectForKey:@"idmatrimonio"]);
-                cassonetto.idcassonetto = [NSNumber numberWithInt:[[currentResult objectForKey:@"idcas"] integerValue]] ;
-                cassonetto.idcomune = [NSNumber numberWithInt:[[currentResult objectForKey:@"idcom"] integerValue]] ;
-                cassonetto.idcalendario = [NSNumber numberWithInt:[[currentResult objectForKey:@"idcal"] integerValue]] ;
+                cassonetto.idcassonetto = [NSNumber numberWithLong:[[currentResult objectForKey:@"idcas"] integerValue]] ;
+                cassonetto.idcomune = [NSNumber numberWithLong:[[currentResult objectForKey:@"idcom"] integerValue]] ;
+                cassonetto.idcalendario = [NSNumber numberWithLong:[[currentResult objectForKey:@"idcal"] integerValue]] ;
                
                 cassonetto.codtipologiarifiuto = [currentResult objectForKey:@"ctr"] ;
                 cassonetto.tipologiarifiuto = [currentResult objectForKey:@"tir"] ;

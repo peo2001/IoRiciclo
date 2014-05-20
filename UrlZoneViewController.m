@@ -61,7 +61,7 @@
 -(void)chiudi
 {
     [Syncronizer SyncUtente];
-    NSLog(@"%d",[[Utenti RC_] count]);
+    NSLog(@"%lu",(unsigned long)[[Utenti RC_] count]);
    
     
     if ([[Utenti RC_] count]!=0)
