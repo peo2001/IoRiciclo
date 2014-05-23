@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4701CC7017897132000E72A7"
-            BuildableName = "IoRciclo.app"
-            BlueprintName = "IoRciclo"
-            ReferencedContainer = "container:IoRciclo.xcodeproj">
+            BuildableName = "IoRiciclo.app"
+            BlueprintName = "IoRiciclo"
+            ReferencedContainer = "container:IoRiciclo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4701CC7017897132000E72A7"
-            BuildableName = "IoRciclo.app"
-            BlueprintName = "IoRciclo"
-            ReferencedContainer = "container:IoRciclo.xcodeproj">
+            BuildableName = "IoRiciclo.app"
+            BlueprintName = "IoRiciclo"
+            ReferencedContainer = "container:IoRiciclo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

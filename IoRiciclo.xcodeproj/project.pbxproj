@@ -30,6 +30,8 @@
 		4711E190183B6A4B00EED72F /* Avvisi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4711E18F183B6A4B00EED72F /* Avvisi.m */; };
 		4711E193183B6E3B00EED72F /* AvvisiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4711E192183B6E3B00EED72F /* AvvisiViewController.m */; };
 		4711E19B183CF4C800EED72F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4711E19A183CF4C800EED72F /* QuartzCore.framework */; };
+		4772085C19011DBA00889B0F /* lampadinaazzurro.png in Resources */ = {isa = PBXBuildFile; fileRef = 4772085B19011DBA00889B0F /* lampadinaazzurro.png */; };
+		4772085F1909250600889B0F /* Model9-10.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4772085E1909250600889B0F /* Model9-10.xcmappingmodel */; };
 		47D1CB2718BBF1CD004D84AC /* ComuneDettaglioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D1CB2618BBF1CD004D84AC /* ComuneDettaglioViewController.m */; };
 		47D1CB2F18BE0E1F004D84AC /* Utenti.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D1CB2E18BE0E1F004D84AC /* Utenti.m */; };
 		47D1CB3718C4E6CE004D84AC /* lampadinagray.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D1CB3318C4E6CE004D84AC /* lampadinagray.png */; };
@@ -112,6 +114,9 @@
 		4711E191183B6E3B00EED72F /* AvvisiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvvisiViewController.h; sourceTree = "<group>"; };
 		4711E192183B6E3B00EED72F /* AvvisiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvvisiViewController.m; sourceTree = "<group>"; };
 		4711E19A183CF4C800EED72F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4772085B19011DBA00889B0F /* lampadinaazzurro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lampadinaazzurro.png; sourceTree = "<group>"; };
+		4772085D190923BC00889B0F /* IoRiciclo 10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "IoRiciclo 10.xcdatamodel"; sourceTree = "<group>"; };
+		4772085E1909250600889B0F /* Model9-10.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "Model9-10.xcmappingmodel"; sourceTree = "<group>"; };
 		47D1CB2518BBF1CD004D84AC /* ComuneDettaglioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComuneDettaglioViewController.h; sourceTree = "<group>"; };
 		47D1CB2618BBF1CD004D84AC /* ComuneDettaglioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComuneDettaglioViewController.m; sourceTree = "<group>"; };
 		47D1CB2818BDE7C9004D84AC /* IoRiciclo 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "IoRiciclo 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -273,6 +278,7 @@
 		4701CC7B17897132000E72A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4772085B19011DBA00889B0F /* lampadinaazzurro.png */,
 				47D1CB3318C4E6CE004D84AC /* lampadinagray.png */,
 				47D1CB3418C4E6CE004D84AC /* lampadinagreen.png */,
 				47D1CB3518C4E6CE004D84AC /* lampadinaorange.png */,
@@ -305,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				4701CCC617897218000E72A7 /* IoRiciclo.xcdatamodeld */,
+				4772085E1909250600889B0F /* Model9-10.xcmappingmodel */,
 				47D1CB3D18C62800004D84AC /* Model.xcmappingmodel */,
 				47D1CB2D18BE0E1F004D84AC /* Utenti.h */,
 				47D1CB2E18BE0E1F004D84AC /* Utenti.m */,
@@ -443,6 +450,7 @@
 				47D2752D18337D3000D72F15 /* backhome.jpg in Resources */,
 				47D2752B18336C0400D72F15 /* ic_iconon.png in Resources */,
 				EAB80EB018D6FE210047993E /* IoRiciclo58.png in Resources */,
+				4772085C19011DBA00889B0F /* lampadinaazzurro.png in Resources */,
 				EAB80EAF18D6FE210047993E /* IoRiciclo80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +507,7 @@
 				47EAE40A188EA79900FF9D1E /* iRate.m in Sources */,
 				47EECAE3182D199C005FD4E4 /* Zone.m in Sources */,
 				47D1CB2F18BE0E1F004D84AC /* Utenti.m in Sources */,
+				4772085F1909250600889B0F /* Model9-10.xcmappingmodel in Sources */,
 				47D28758183A6049006A15F6 /* CalendarioViewController.m in Sources */,
 				470075D317D12825004EE1C6 /* ProvinceViewController.m in Sources */,
 				47EECAE0182D199C005FD4E4 /* GiorniRiciclo.m in Sources */,
@@ -562,7 +571,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "EE3C372E-0D78-453B-ACCE-9FF769BF756E";
+				PROVISIONING_PROFILE = "C390650F-7CA9-41B1-95EC-BFAEE8105D08";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,6 +661,7 @@
 		4701CCC617897218000E72A7 /* IoRiciclo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4772085D190923BC00889B0F /* IoRiciclo 10.xcdatamodel */,
 				47D1CB3C18C6270B004D84AC /* IoRiciclo 9.xcdatamodel */,
 				47D1CB3B18C62417004D84AC /* IoRiciclo 8.xcdatamodel */,
 				47D1CB3218C49A00004D84AC /* IoRiciclo 7.xcdatamodel */,
@@ -662,7 +672,7 @@
 				47D983C818BB5C4F007D38F0 /* IoRiciclo 2.xcdatamodel */,
 				4701CCC717897218000E72A7 /* IoRiciclo.xcdatamodel */,
 			);
-			currentVersion = 47D1CB3C18C6270B004D84AC /* IoRiciclo 9.xcdatamodel */;
+			currentVersion = 4772085D190923BC00889B0F /* IoRiciclo 10.xcdatamodel */;
 			path = IoRiciclo.xcdatamodeld;
 			sourceTree = "<group>";
 			usesTabs = 0;
