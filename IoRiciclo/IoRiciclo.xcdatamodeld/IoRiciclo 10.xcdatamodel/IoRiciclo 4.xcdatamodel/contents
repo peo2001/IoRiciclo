@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Avvisi" representedClassName="Avvisi" syncable="YES">
+        <attribute name="datacreazione" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descrizione" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idavviso" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="letto" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="titolo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CalendarioDetail" representedClassName="CalendarioDetail" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="idcalendario" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idcalendariodetail" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ora" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Cassonetto" representedClassName="Cassonetto" syncable="YES">
+        <attribute name="codtipologiarifiuto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descrizione" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idcalendario" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idcassonetto" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitudine" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitudine" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tipologiarifiuto" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CentriRaccolta" representedClassName="CentriRaccolta" syncable="YES">
+        <attribute name="centroraccolta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descrizione" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idcalendario" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idcentroraccolta" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitudine" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitudine" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Comuni" representedClassName="Comuni" syncable="YES">
+        <attribute name="cap" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="codiceIstat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comune" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailAmbiente" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gestByComune" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idGestore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idprovincia" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitudine" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitudine" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nomeGestore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numeroAbitanti" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="provincia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regione" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlGestore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlZone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userGestore" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GiorniRiciclo" representedClassName="GiorniRiciclo" syncable="YES">
+        <attribute name="codtiporiciclo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="datagiorno" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descrizione" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descrizionepercomune" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idgiornoriciclo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idzona" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="immagine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="immaginepercomune" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ora" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tiporiciclo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Province" representedClassName="Province" syncable="YES">
+        <attribute name="idprovincia" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idregione" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="provincia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regione" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TipiRiciclo" representedClassName="TipiRiciclo" syncable="YES">
+        <attribute name="codtiporiciclo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="immagine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tiporiciclo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TipiRicicloComuni" representedClassName="TipiRicicloComuni" syncable="YES">
+        <attribute name="codtiporiciclo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descrizione" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idtiporiciclocomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Utenti" representedClassName="Utenti" syncable="YES">
+        <attribute name="datacreazione" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idiosudid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idzona" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="iosudid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Zone" representedClassName="Zone" syncable="YES">
+        <attribute name="idcomune" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idzona" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="zona" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Avvisi" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CalendarioDetail" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Cassonetto" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CentriRaccolta" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Comuni" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GiorniRiciclo" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Province" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TipiRiciclo" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TipiRicicloComuni" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Zone" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Utenti" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

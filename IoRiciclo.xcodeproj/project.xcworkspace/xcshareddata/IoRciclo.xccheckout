@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>42C44E18-EB3A-4599-A9B4-5337CCA1A620</string>
+	<key>IDESourceControlProjectName</key>
+	<string>IoRciclo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B59EC6ED-FDEF-41AC-829A-E6455D4B936A</key>
+		<string>https://github.com/peo2001/IoRiciclo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IoRciclo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B59EC6ED-FDEF-41AC-829A-E6455D4B936A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/peo2001/IoRiciclo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B59EC6ED-FDEF-41AC-829A-E6455D4B936A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B59EC6ED-FDEF-41AC-829A-E6455D4B936A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IoRiciclo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
