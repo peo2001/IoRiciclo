@@ -10,7 +10,7 @@
 
 @implementation MyApplicationSingleton
 
-@synthesize IdComune,IdZona, OraNotifica,MinutiNotifica;
+@synthesize IdComune,IdZona, OraNotifica,MinutiNotifica,idFB,nameFB;
 
 #pragma mark Singleton Implementation
 static MyApplicationSingleton *sharedObject;
@@ -32,6 +32,9 @@ static MyApplicationSingleton *sharedObject;
             sharedObject=  [[MyApplicationSingleton alloc] init];
             sharedObject.OraNotifica = 0;
             sharedObject.MinutiNotifica=0;
+            sharedObject.utente = [[Utenti alloc] init];
+            sharedObject.utente.nomeutente = @"";
+            
         }
     }
     
@@ -88,10 +91,25 @@ static MyApplicationSingleton *sharedObject;
     shared.MinutiNotifica = MinutiNotifica;
 }
 
++(void)setIdFB: (NSString *) idFB
+{
+    MyApplicationSingleton *shared = [MyApplicationSingleton sharedInstance];
+    shared.idFB = idFB;
+}
+
++(void)setNameFB: (NSString *) nameFB
+{
+    MyApplicationSingleton *shared = [MyApplicationSingleton sharedInstance];
+    shared.nameFB = nameFB;
+}
+
 
 + (Boolean) IsUserLogged
 {
+    if ([sharedObject.utente IsUserLogged])
+    {
          return true;
-    
+    }
+    return false;
 }
 @end

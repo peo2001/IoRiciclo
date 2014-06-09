@@ -19,7 +19,7 @@
 #import "Avvisi.h"
 #import "Utenti.h"
 #import <CoreData/CoreData.h>
-#import "ManagedObjectBase.h"
+#import <CoreLocation/CoreLocation.h>
 
 #import "MyApplicationSingleton.h"
 
@@ -35,11 +35,16 @@
 @interface Syncronizer : NSObject
 {
      //RemoteConnector * myRemoteConnector;
+   
+   
 }
 
 @property (nonatomic, retain) id <SyncronizerDelegate> delegate;
 
 +(NSMutableArray *)SyncComuni:(NSNumber *)IdProvincia;
++(NSMutableArray *)SyncComuniGeo;
++(NSMutableArray *) SyncComuniStringSearch:strSearch;
+
 +(void)SyncProvince;
 +(NSMutableArray *)SyncZone:(NSNumber *)IdComune;
 +(NSMutableArray *)SyncGiorniRiciclo:(NSDate *) data;

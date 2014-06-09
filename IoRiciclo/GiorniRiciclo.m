@@ -79,7 +79,7 @@
     [offset setMinute:[self.durata integerValue]];
    // NSLog(@"durata %d data %@",[self.durata integerValue], self.datagiorno);
     NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:offset toDate:self.datagiorno options:0];
-    //NSLog(@" data nuova %@",newDate);
+   // NSLog(@" data con durata %@",newDate);
 
     return newDate;
 }

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "ManagedObjectBase.h"
-
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface Utenti : ManagedObjectBase
 
@@ -20,11 +20,14 @@
 @property (nonatomic, retain) NSNumber * idzona;
 @property (nonatomic, retain) NSString * nomeutente;
 
+@property (retain, nonatomic) NSURLConnection *connection;
 
 + (Utenti *)Load;
 + (NSString *)UrlRequest;
 +(NSMutableArray*)_parseXmlDictionary:(NSDictionary *)aDictionary;
 +(NSMutableArray *)RC_;
-
+- (BOOL)IsUserLogged;
+-(void)logoff;
+-(void)login : (id<FBGraphUser>)user;
 
 @end

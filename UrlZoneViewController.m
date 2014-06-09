@@ -50,9 +50,9 @@
     [_btnChiudi addTarget:self action:@selector(chiudi) forControlEvents:UIControlEventTouchUpInside];
     
     
-    NSURL *fullURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?AppId=%@&DeviceType=IOS",@"",_urlZone ,deviceUDID]] ;
+    NSURL *fullURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?AppId=%@&DeviceType=IOS",@"",@"http://www.iriciclo.it/PagineComuni/Palermo/Default.asp" ,deviceUDID]] ;
     
-    //NSLog(@"%@",fullURL);
+    NSLog(@"%@",fullURL);
     [_webView setDelegate:self];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:fullURL];
     [_webView loadRequest:requestObj];
@@ -61,7 +61,7 @@
 -(void)chiudi
 {
     [Syncronizer SyncUtente];
-    NSLog(@"%lu",(unsigned long)[[Utenti RC_] count]);
+    //NSLog(@"%lu",(unsigned long)[[Utenti RC_] count]);
    
     
     if ([[Utenti RC_] count]!=0)

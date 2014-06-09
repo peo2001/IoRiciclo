@@ -24,6 +24,7 @@
 +(void) AddGroupBy: (NSArray *) GroupBy;
 +(void) setEntity:(NSString *)EntityName;
 +(NSMutableArray *)RC_;
++(NSMutableArray *)RC_sort:(NSString *)sort;
 +(NSFetchedResultsController *)RC_Fetch:(NSString * )Sort;
 +(ManagedObjectBase *)LoadEntity:(NSString * )EntityName;
 +(void)Save;

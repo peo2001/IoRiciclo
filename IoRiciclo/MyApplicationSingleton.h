@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Utenti.h"
 
 @interface MyApplicationSingleton : NSObject {
     // Instance variables:
@@ -21,8 +22,11 @@
 @property (nonatomic,assign) NSNumber *IdZona;
 @property (nonatomic,assign) NSInteger OraNotifica;
 @property (nonatomic,assign) NSInteger MinutiNotifica;
+@property (nonatomic,assign) NSString * idFB;
+@property (nonatomic,assign) NSString * nameFB;
+@property (nonatomic,assign) Utenti * utente;
 
-
+ 
 // Required: A method to retrieve the shared instance
 +(MyApplicationSingleton *) sharedInstance;
 
@@ -35,6 +39,9 @@
 +(void) setIdComune:(NSNumber *)IdComune;
 +(NSNumber *) getIdZona;
 +(void) setIdZona:(NSNumber *)IdZona;
++(void)setIdFB: (NSString *) idFB;
++(void)setNameFB: (NSString *) nameFB;
+
 +(Boolean)IsUserLogged;
 
 +(NSInteger ) getOraNotifica;

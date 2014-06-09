@@ -50,6 +50,17 @@
     return (Comuni *) [super LoadEntity:@"Comuni"];
 }
 
++(NSMutableArray *)RC_
+{
+    
+    [super setEntity:@"Comuni"];
+    
+    [self AddPredicate:   (NSPredicate *)[NSString stringWithFormat:@"1=1"]];
+    
+    return [super RC_sort:@"comune"];
+   
+}
+
 
 +(NSMutableArray *)RC_perProv:(NSNumber *)Idprovincia
 {
@@ -109,6 +120,8 @@
     return [NSString stringWithFormat: @"ExportComuniPlist.asp"];
     
 }
+
+
 + (NSString *)UrlRequestSingoloComune
 {
     

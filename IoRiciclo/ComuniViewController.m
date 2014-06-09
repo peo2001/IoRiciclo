@@ -101,7 +101,9 @@
     if ([[info gestByComune] isEqualToString:@"S"])
     {
         cell.accessoryView =[[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"lampadinagreen.png"]];
-    }else
+    }
+    
+    else
     {
       /* if ((([info nomeGestore]!=nil)&&(![[info nomeGestore] isEqual:@""])) || (([info urlGestore]!=nil)&&(![[info urlGestore] isEqual:@""])))
        {

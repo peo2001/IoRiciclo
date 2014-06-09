@@ -16,13 +16,13 @@
 {
    //return [NSString stringWithFormat:@"http://hq.xtremesoftware.it/ioriciclo/webservices/"];
     //return [NSString stringWithFormat:@"http://kiss/IoRiciclo/WebServices/"];
-  return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
+    return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
 }
 + (NSString *)UrlRequestSendUdid
 {
     
     
-   // return [NSString stringWithFormat:@"http://hq.xtremesoftware.it/ioriciclo/Appleregister.asp?"];
+    //return [NSString stringWithFormat:@"http://hq.xtremesoftware.it/ioriciclo/Appleregister.asp?"];
   //return [NSString stringWithFormat:@"http://kiss/IoRiciclo/Appleregister.asp?"];
     return [NSString stringWithFormat:@"http://www.iriciclo.it/Appleregister.asp?"];
 
@@ -34,7 +34,8 @@
     //recuper i comuni dal db
     comuni=[Comuni RC_:IdProvincia];
     
-    NSString *fullUrlRequest =[NSString stringWithFormat: @"%@%@?IdProvincia=%@",[self UrlRequest],[Comuni UrlRequest],IdProvincia];
+    
+   NSString *fullUrlRequest =[NSString stringWithFormat: @"%@%@?IdProvincia=%@",[self UrlRequest],[Comuni UrlRequest],IdProvincia];
     
     //NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
     
@@ -60,6 +61,89 @@
     return comuni;
     
 }
+
++(NSMutableArray *) SyncComuniStringSearch:strSearch
+{
+    NSMutableArray * comuni;
+    //recuper i comuni dal db
+    comuni=[Comuni RC_];
+    
+    NSString *fullUrlRequest =[NSString stringWithFormat: @"%@%@?ComLike=%@",[self UrlRequest],[Comuni UrlRequest],strSearch];
+    
+    
+    
+    NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
+    
+    //se il teefono è connesso
+    if ([Connector connected])
+    {
+        //recuper il plist dalla rete
+        NSMutableDictionary *DictionaryComuni = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString: fullUrlRequest]];
+        
+        for(Comuni *comune in comuni )
+        {
+            //elimino i luogh vecchi
+            [Comuni Delete: comune];
+            
+        }
+     //   NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
+        comuni = nil;
+        //parso l'xml del plist
+        comuni= [Comuni _parseXmlDictionary:DictionaryComuni];
+        [Comuni Save];
+        
+    }
+    return comuni;
+    
+}
+
+
+
+
++(NSMutableArray *)SyncComuniGeo
+{
+    NSMutableArray * comuni;
+    //recuper i comuni dal db
+    comuni=[Comuni RC_];
+    CLLocationManager *locationManager = nil;
+
+    
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager startMonitoringSignificantLocationChanges];
+
+    
+    CLLocation *location = [locationManager location ];
+    
+    
+    NSString *fullUrlRequest =[NSString stringWithFormat: @"%@%@?Lon=%f&Lat=%f",[self UrlRequest],[Comuni UrlRequest],location.coordinate.longitude,location.coordinate.latitude];
+    
+    
+    
+    NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
+    
+    //se il teefono è connesso
+    if ([Connector connected])
+    {
+        //recuper il plist dalla rete
+        NSMutableDictionary *DictionaryComuni = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString: fullUrlRequest]];
+        
+        for(Comuni *comune in comuni )
+        {
+            //elimino i luogh vecchi
+            [Comuni Delete: comune];
+            
+        }
+       //  NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
+        comuni = nil;
+        //parso l'xml del plist
+        comuni= [Comuni _parseXmlDictionary:DictionaryComuni];
+        [Comuni Save];
+        
+    }
+    return comuni;
+    
+}
+
 
 +(NSMutableArray *)SyncZone:(NSNumber *)IdComune
 {
@@ -341,10 +425,25 @@
             
         }
         
-        // NSLog(@"full request: %@",fullUrlRequest);
+         NSLog(@"full request: %@",fullUrlRequest);
+        
+        
+        
+      /*  NSData *data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]];
+        
+        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:[newStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+       
+        // access the dictionaries
+        NSMutableDictionary *DictionaryAvvisi2 = arr[0];
+        */
+        
         //recuper il plist dalla rete
         NSMutableDictionary *DictionaryAvvisi = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]];
-        //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
+        
+        
+        //NSLog(@"dictionary: %@",DictionaryAvvisi);
         avvisi = nil;
         //parso l'xml del plist
         [Avvisi _parseXmlDictionary:DictionaryAvvisi];
@@ -382,7 +481,7 @@
         // NSLog(@"full request: %@",fullUrlRequest);
         //recuper il plist dalla rete
         NSMutableDictionary *DictionaryComune = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]];
-        NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
+       // NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
         comuni = nil;
         //parso l'xml del plist
         [Comuni _parseXmlDictionarySingleComune:DictionaryComune];
@@ -415,7 +514,9 @@
         
        //  NSLog(@"full request: %@",fullUrlRequest);
         //recuper il plist dalla rete
-        NSMutableDictionary *DictionaryUtente = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]];
+        NSMutableDictionary *DictionaryUtente = [[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest] ];
+        
+        
         //NSLog(@"dictionary: %@",[[NSMutableDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:fullUrlRequest]]);
         
         if (!( DictionaryUtente ==nil ))

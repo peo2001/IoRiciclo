@@ -80,6 +80,31 @@
     return array;
 }
 
++(NSMutableArray *)RC_sort:(NSString *)sort{
+    
+    
+    //CoreDataMethods *app = [CoreDataMethods alloc];
+    //  [[[CoreDataMethods getInstance]req] setEntity:[NSEntityDescription entityForName:EntityName inManagedObjectContext:[[CoreDataMethods getInstance] managedObjectContext]]];
+    
+    
+    NSError *error;
+    NSMutableArray *array = [[NSMutableArray alloc]init];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:sort ascending:YES];
+    [[[CoreDataMethods getInstance]req] setSortDescriptors:@[sortDescriptor]];
+    
+    
+    array =(NSMutableArray *) [[[CoreDataMethods getInstance] managedObjectContext] executeFetchRequest:[[CoreDataMethods getInstance]req] error:&error];
+    
+    [array retain ];
+    
+    //azzerare il predicate o il req
+    [self AddPredicate: (NSPredicate *)[NSString stringWithFormat:@"1=1"]];
+    
+    return array;
+}
+
 
 +(NSFetchedResultsController *)RC_Fetch:(NSString *)Sort
 {

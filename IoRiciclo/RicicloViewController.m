@@ -17,13 +17,10 @@
 @synthesize lblData = _lblData;
 @synthesize lblTipoRiciclo = _lblTipoRiciclo;
 @synthesize imageView = _imageView;
+@synthesize lblSocialLogin = _lblSocialLogin;
 //@synthesize adBannerView;
 @synthesize contentView;
 
-- (void)viewDidLoad
-{
-    
-}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -87,6 +84,26 @@
     self.tvDopoDomani.delegate= self;
     self.tv3Giorni.delegate= self;
     
+   
+    //fb login
+    
+    if ([[[MyApplicationSingleton sharedInstance] utente] IsUserLogged])
+    {
+        _lblSocialLogin.text =[NSString stringWithFormat:@"Benvenuto %@" ,[[NSUserDefaults standardUserDefaults] valueForKey:@"nameFB"]];
+    }
+    else{
+         _lblSocialLogin.text = [NSString stringWithFormat:@"Entra Nella Comunity" ];
+    }
+    
+    [_lblSocialLogin setUserInteractionEnabled:YES];
+    
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doSocialLogin)];
+    [tapGestureRecognizer setNumberOfTapsRequired:1];
+    [_lblSocialLogin addGestureRecognizer:tapGestureRecognizer];
+    [tapGestureRecognizer release];
+    //fb login
+    
     
     //iad
     // [self createAdBannerView];
@@ -95,9 +112,15 @@
     
 }
 
+-(void)doSocialLogin
+{
+    [self performSegueWithIdentifier: @"doSocialLogin" sender: self];
+}
+
 - (void)alertView:(UIAlertView *)theAlert clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [self performSegueWithIdentifier: @"goToProvince" sender: self];
+    
 }
 
 //compone e disegna la toolbar
@@ -131,19 +154,6 @@
                 
             }
             else{
-                // se il comune è gestito da una utente vengono mostrati solo i dati che l'utente vuol fare vedere
-                
-                //_btninfo = [[UIButton alloc] initWithImage:[UIImage imageNamed:@"lampadinaorange.png" ] style: UIBarButtonItemStylePlain target:self action:@selector(infoPrivato:)];
-             /*   if (((comune.nomeGestore!=nil)&&(![comune.nomeGestore isEqual:@""])) || ((comune.urlGestore!=nil)&&(![comune.urlGestore isEqual:@""])))
-                {
-                    [_btnInfo setImage:[UIImage imageNamed:@"lampadinaazzurro.png" ] forState:UIControlStateNormal];
-
-                }else
-                {
-                    [_btnInfo setImage:[UIImage imageNamed:@"lampadinagray.png" ] forState:UIControlStateNormal];
-
-                }
-              */
                 [_btnInfo setImage:[UIImage imageNamed:@"lampadinaazzurro.png" ] forState:UIControlStateNormal];
                 
                 [_btnInfo addTarget:self action:@selector(infoPrivato) forControlEvents:UIControlEventTouchUpInside];
@@ -180,9 +190,6 @@
     
     NSArray *buttonItems = [NSArray arrayWithObjects: comuneButton,flexibleSpace,flexibleSpace,alarm, nil];
     
-    
-    //_toolBar.backgroundColor = [UIColor blackColor];//[UIColor colorWithRed:50.0f/255.0f green:170.0f/255.0f blue:40.0f/255.0f alpha:0.8f];
-    
     [_toolBar setItems:buttonItems];
     
 }
@@ -207,6 +214,17 @@
 -(void)refreshView:(NSDate *)data
 {
     
+    //FB
+    if ([[[MyApplicationSingleton sharedInstance] utente] IsUserLogged])
+    {
+        _lblSocialLogin.text =[NSString stringWithFormat:@"Benvenuto %@" ,[[NSUserDefaults standardUserDefaults] valueForKey:@"nameFB"]];
+    }
+    else{
+        _lblSocialLogin.text =[NSString stringWithFormat:@"Entra Nella Comunity"];
+       
+    }
+    //fine FB
+    
     NSDate *myDate = data;
     NSDateFormatter *df = [NSDateFormatter new];
     [df setDateFormat:@"EEEE dd"];
@@ -215,8 +233,11 @@
     
     
     currentDate = [DateHelper DateTimeZone:[NSDate date]];
-    NSLog (@"curr date %@", currentDate);
-    self.lblData.text =[NSString stringWithFormat:@"Prossimo Riciclo %@", [df stringFromDate:myDate].uppercaseString ];
+    //NSLog (@"curr date %@", currentDate);
+    self.lblData.text =[NSString stringWithFormat:@"%@", [df stringFromDate:currentDate].uppercaseString ];
+    
+    //NSLog (@"curr date %@",[df stringFromDate:myDate].uppercaseString);
+    
     //[self createToolbar];
     
     self.imageView.image = nil;
@@ -253,28 +274,34 @@
     //recupero l'orario minimo e massimo del giro del riciclo
     for (GiorniRiciclo *currGiorno in GiorniRiciclaggio)
     {
+       // NSLog(@"dataorainizio %@ dataora fine %@ ", currGiorno.datagiorno,currGiorno.datagiornofine);
         if (primo)
         {
             dataoraMin = currGiorno.datagiorno;
             dataoraMax = currGiorno.datagiornofine;
+           // NSLog(@"dataorainizio %@ dataora fine %@ ", dataoraMin,dataoraMax);
+           
             primo = false;
         }
-        if (dataoraMin > currGiorno.datagiorno )
+        
+        if ([dataoraMin compare:currGiorno.datagiorno] == NSOrderedDescending)
+        {
             dataoraMin = currGiorno.datagiorno;
-        
-        if (dataoraMax < currGiorno.datagiornofine )
+        }
+        if ([dataoraMin compare:currGiorno.datagiorno] == NSOrderedAscending )
+        {
             dataoraMax = currGiorno.datagiornofine;
-        NSLog(@"dataoraMax %@", dataoraMax);
-        
+        }
+       
         
     }
     
-    NSLog(@"dataoraMin %@ DataMax %@",dataoraMin, dataoraMax);
+    //NSLog(@"dataoraMin %@ DataMax %@",dataoraMin, dataoraMax);
     
     NSDateFormatter *dfa = [NSDateFormatter new];
     [dfa setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     [dfa setDateFormat:@"HH:mm"];
-     NSLog(@"dataoraMin %@",[dfa stringFromDate:dataoraMin]);
+    // NSLog(@"dataoraMin %@",[dfa stringFromDate:dataoraMin]);
    
     NSString * oraDaMostrare =@"";
     
@@ -298,6 +325,8 @@
     if ([GiorniRiciclaggio count] > 2)
     {
         self.lblTipoRiciclo.text = [NSString stringWithFormat:@""];
+        self.lblData.text =[NSString stringWithFormat:@"%@ (%@)", [df stringFromDate:currentDate].uppercaseString ,oraDaMostrare];
+        
         
         self.tvOggi.hidden = FALSE;
     }
@@ -305,7 +334,7 @@
         
         if ([GiorniRiciclaggio count] > 0 )
         {
-            self.lblData.text =[NSString stringWithFormat:@"%@ (%@)", [df stringFromDate:myDate].uppercaseString ,oraDaMostrare];
+            self.lblData.text =[NSString stringWithFormat:@"%@ (%@)", [df stringFromDate:currentDate].uppercaseString ,oraDaMostrare];
             
             self.lblTipoRiciclo.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggio objectAtIndex:0]tiporiciclo]];
             [self setImmagineInButton:0:_btnOggi : [GiorniRiciclaggio objectAtIndex:0]];
@@ -313,6 +342,8 @@
         
         if ([GiorniRiciclaggio count] > 1 )
         {
+           // self.lblData.text =[NSString stringWithFormat:@"%@ (%@)", [df stringFromDate:currentDate].uppercaseString ,oraDaMostrare];
+            
             self.lblTipoRiciclo.text = [NSString stringWithFormat:@"%@ e %@",self.lblTipoRiciclo.text,[[GiorniRiciclaggio objectAtIndex:1]tiporiciclo]];
             [self setImmagineInButton:1  :_btnOggi2 : [GiorniRiciclaggio objectAtIndex:1]];
             
@@ -529,7 +560,9 @@
 -(void)pickProvincia
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [self performSegueWithIdentifier: @"goToProvince" sender: self];
+    //[self performSegueWithIdentifier: @"goToProvince" sender: self];
+    [self performSegueWithIdentifier: @"goToComuni2" sender: self];
+
 }
 
 

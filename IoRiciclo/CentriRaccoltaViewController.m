@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO ];
+    zoommed = false;
     self.navigationController.navigationBar.topItem.title=@"Centri Raccolta";
 	// Do any additional setup after loading the view.
     
@@ -72,12 +73,21 @@
     
     //MKMapPoint annotationPoint = MKMapPointForCoordinate(_mapView.userLocation.coordinate);
     MKMapRect zoomRect= MKMapRectNull;//MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
-    
     for (id <MKAnnotation> annotation in _mapView.annotations)
     {
+        /*
         MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
         MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
         zoomRect = MKMapRectUnion(zoomRect, pointRect);
+         */
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.5, 0.5);
+        if (MKMapRectIsNull(zoomRect)) {
+            zoomRect = pointRect;
+        } else {
+            zoomRect = MKMapRectUnion(zoomRect, pointRect);
+        }
+        
     }
     if (!zoommed)
     {
@@ -86,7 +96,7 @@
     zoommed = true;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
-}
+}	
 
 -(void)showAlertNoCentri
 {
@@ -129,23 +139,7 @@
         }
       //  NSLog(@"tipologiarifiuto %@",craccoltaAnnotation.tipologiarifiuto);
         annotationView.image = [UIImage imageNamed:@"ann_000.png"];
-        // set your custom image
-        /* if ([cassonettoAnnotation.codtipologiarifiuto isEqual: @"CHI"])
-         {
-         annotationView.image = [UIImage imageNamed:@"pittogrammachiesa.png"];
-         
-         }
-         if ([cassonettoAnnotation.codtipologiarifiuto isEqual: @"NEG"])
-         {
-         annotationView.image = [UIImage imageNamed:@"pittogrammaregalo.png"];
-         
-         }
-         if ([cassonettoAnnotation.codtipologiarifiuto isEqual: @"RIS"])
-         {
-         annotationView.image = [UIImage imageNamed:@"pittogrammaristorante.png"];
-         
-         }
-         */
+      
     }
     annotationView.canShowCallout = YES;
     
@@ -156,15 +150,7 @@
     
     return annotationView;
 }
-/*
- - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
- Cassonetto *annotation = (Cassonetto *)view;
- CalendarioViewController *CalendarioController = [[CalendarioViewController alloc] init];
- CalendarioController.IdCalendario =cassonettoAnnotation.idcalendario;
- [[self navigationController] pushViewController:CalendarioController animated:YES];
- }
- 
- */
+
 
 - (void)mapView:(MKMapView *)mapView
  annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
@@ -185,12 +171,7 @@
         //}
         // }
         
-    } /*else if([(UIButton*)control buttonType] == UIButtonTypeInfoLight) {
-       // Do your thing when the infoDarkButton is touched
-       
-       NSLog(@"infoDarkButton for longitude: and latitude:");
-       }
-       */
+    }
 }
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     
@@ -203,15 +184,7 @@
         MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.2, 0.2);
         zoomRect = MKMapRectUnion(zoomRect, pointRect);
     }
-    if (!zoommed)
-    {
-        [self.mapView setVisibleMapRect:zoomRect animated:YES];
-    }
-    zoommed = true;
-    
-   // [self showAlertNoCentri];
-
-}
+ }
 
 
 /*

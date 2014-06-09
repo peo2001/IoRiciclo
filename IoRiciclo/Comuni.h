@@ -46,6 +46,7 @@
 +(Comuni *)Load;
 +(NSMutableArray *)RC_perProv:(NSNumber *)Idprovincia;
 +(NSFetchedResultsController *)RC_Fetch:(NSNumber *)IdProvincia :(NSString *)Sort;
++(NSMutableArray *)RC_;
 +(NSMutableArray *)RC_:(NSNumber *)IdComune;
 +(NSMutableArray *)RC_Comune:(NSNumber *)IdComune;
 + (NSString *)UrlRequest;

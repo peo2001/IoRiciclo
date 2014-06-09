@@ -84,13 +84,16 @@
     zoommed = true;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
-    
+    if ([cassonetti count]==0)
+    {
+       // [self showAlertNoCassonetti ];
+    }
    
 }
 
 -(void)showAlertNoCassonetti
 {
-    if ([self.mapView.annotations count]== 1)
+    if ([self.mapView.annotations count]== 0)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IoRiciclo"
                                                         message:@"Non sono presenti Cassonetti"
@@ -125,25 +128,8 @@
                                initWithAnnotation:annotation reuseIdentifier:viewId] autorelease];
             
         }
-       // NSLog(@"tipologiarifiuto %@",cassonettoAnnotation.tipologiarifiuto);
+      
         annotationView.image = [UIImage imageNamed:@"ann_000.png"];
-        // set your custom image
-        /*if ([cassonettoAnnotation.codtipologiarifiuto isEqual: @"CHI"])
-        {
-            annotationView.image = [UIImage imageNamed:@"pittogrammachiesa.png"];
-            
-        }
-        if ([cassonettoAnnotation.codtipologiarifiuto isEqual: @"NEG"])
-        {
-            annotationView.image = [UIImage imageNamed:@"pittogrammaregalo.png"];
-            
-        }
-        if ([cassonettoAnnotation.codtipologiarifiuto isEqual: @"RIS"])
-        {
-            annotationView.image = [UIImage imageNamed:@"pittogrammaristorante.png"];
-            
-        }
-         */
         
     }
     annotationView.canShowCallout = YES;
@@ -155,15 +141,7 @@
     
     return annotationView;
 }
-/*
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
-    Cassonetto *annotation = (Cassonetto *)view;
-    CalendarioViewController *CalendarioController = [[CalendarioViewController alloc] init];
-    CalendarioController.IdCalendario =cassonettoAnnotation.idcalendario;
-    [[self navigationController] pushViewController:CalendarioController animated:YES];
-}
 
-*/
 
 - (void)mapView:(MKMapView *)mapView
  annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
@@ -191,32 +169,17 @@
         MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.2, 0.2);
         zoomRect = MKMapRectUnion(zoomRect, pointRect);
     }
-    
+    /*
     if (!zoommed)
     {
          [self.mapView setVisibleMapRect:zoomRect animated:YES];
     }
     zoommed = true;
-    
+    */
     //[self showAlertNoCassonetti];
     
 }
 
-
-/*
- - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
- {
- MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
- [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
- MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
- point.coordinate = userLocation.coordinate;
- point.title = @"Where am I?";
- point.subtitle = @"I'm here!!!";
- 
- [self.mapView addAnnotation:point];
- }
- 
- */
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

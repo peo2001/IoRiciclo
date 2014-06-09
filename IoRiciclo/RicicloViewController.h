@@ -18,6 +18,8 @@
 #import <iAd/iAd.h>
 
 
+
+
 @interface RicicloViewController : UIViewController <ADBannerViewDelegate,UITableViewDelegate,UIAlertViewDelegate>
 {
     NSDate *currentDate;
@@ -49,6 +51,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTipoRicicloDopodomani;
 @property (strong, nonatomic) IBOutlet UILabel *lblTipoRicicloTreGiorni;
 
+@property (strong, nonatomic) IBOutlet UILabel *lblSocialLogin;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
 
@@ -78,7 +82,6 @@
 //@property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
 @property (nonatomic, retain) IBOutlet UIView *giorniFuturiView;
-
 
 
 //- (void) createAdBannerView;

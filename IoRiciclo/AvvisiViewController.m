@@ -10,7 +10,7 @@
 
 #define FONT_SIZE 14.0f
 #define FONT_SIZETITLE 14.0f
-#define CELL_CONTENT_WIDTH 320.0f
+#define CELL_CONTENT_WIDTH 300.0f
 #define CELL_CONTENT_MARGIN 10.0f
 
 @interface AvvisiViewController ()
@@ -36,6 +36,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.navigationController.navigationBar.backgroundColor=[UIColor redColor];
     [self.navigationController setNavigationBarHidden:NO ];
+     self.navigationController.navigationBar.topItem.title=@"Avvisi";
     //il sync delle province non ritorna nessun array perchè la Ricerca viene effettuata dopo per poter utilizzare il fetcher (il parsing del sincro torna una array e quindi non andrebbe bene)
     
     [self performSelectorInBackground:@selector(CaricaAvvisi) withObject:nil];
@@ -50,7 +51,18 @@
     
     comune = [[Comuni RC_Comune:[MyApplicationSingleton getIdComune]] objectAtIndex:0];
     
-    _lblComune.text = [NSString stringWithFormat:@"  %@ Avvisi", comune.comune ];
+    if ([[avvisi sections]count] ==0)
+    {
+        _lblComune.numberOfLines = 0;
+        _lblComune.textAlignment = NSTextAlignmentCenter;
+        _lblComune.text = [NSString stringWithFormat:@" Non ci sono Avvisi \n per il comune di %@", comune.comune ];
+        
+    }else
+    {
+        _lblComune.text = [NSString stringWithFormat:@"  %@ Avvisi", comune.comune ];
+    }
+    
+    
     
     [self.tableView reloadData];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -89,7 +101,7 @@
     UILabel *labelTitolo=nil;
     UILabel *labelUser=nil;
     
-    cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell = [tableView dequeueReusableCellWithIdentifier:@"CellAvvisi"];
     
     
     // if (cell == nil)
