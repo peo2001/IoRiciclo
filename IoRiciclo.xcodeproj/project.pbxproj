@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		470075D317D12825004EE1C6 /* ProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470075D217D12825004EE1C6 /* ProvinceViewController.m */; };
 		4701CC7517897132000E72A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4701CC7417897132000E72A7 /* UIKit.framework */; };
 		4701CC7717897132000E72A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4701CC7617897132000E72A7 /* Foundation.framework */; };
 		4701CC7917897132000E72A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4701CC7817897132000E72A7 /* CoreGraphics.framework */; };
@@ -26,7 +25,6 @@
 		4701CCC5178971F0000E72A7 /* Syncronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4701CCC0178971F0000E72A7 /* Syncronizer.m */; };
 		4701CCC817897218000E72A7 /* IoRiciclo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4701CCC617897218000E72A7 /* IoRiciclo.xcdatamodeld */; };
 		4701CCD81789B541000E72A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4701CCD71789B541000E72A7 /* SystemConfiguration.framework */; };
-		470CD2BA17CFEAA500DF79DE /* ComuniViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470CD2B917CFEAA500DF79DE /* ComuniViewController.m */; };
 		4711E190183B6A4B00EED72F /* Avvisi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4711E18F183B6A4B00EED72F /* Avvisi.m */; };
 		4711E193183B6E3B00EED72F /* AvvisiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4711E192183B6E3B00EED72F /* AvvisiViewController.m */; };
 		4711E19B183CF4C800EED72F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4711E19A183CF4C800EED72F /* QuartzCore.framework */; };
@@ -50,6 +48,9 @@
 		47D28753183A0643006A15F6 /* CalendarioDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D28752183A0643006A15F6 /* CalendarioDetail.m */; };
 		47D28755183A53D3006A15F6 /* ann_000.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D28754183A53D3006A15F6 /* ann_000.png */; };
 		47D28758183A6049006A15F6 /* CalendarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D28757183A6049006A15F6 /* CalendarioViewController.m */; };
+		47E098BE19331939008F3A60 /* SocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E098BD19331939008F3A60 /* SocialLoginViewController.m */; };
+		47E098C1193341A0008F3A60 /* ComuniSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E098C0193341A0008F3A60 /* ComuniSearchViewController.m */; };
+		47E098C31934D427008F3A60 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E098C21934D427008F3A60 /* CoreLocation.framework */; };
 		47EAE409188EA79900FF9D1E /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47EAE406188EA79900FF9D1E /* iRate.bundle */; };
 		47EAE40A188EA79900FF9D1E /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EAE408188EA79900FF9D1E /* iRate.m */; };
 		47EAE40C188EA81900FF9D1E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EAE40B188EA81900FF9D1E /* StoreKit.framework */; };
@@ -66,10 +67,7 @@
 		47F6222C17E8627300295CAE /* IoRiciclo57.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6222B17E8627300295CAE /* IoRiciclo57.png */; };
 		47F6222E17E8627800295CAE /* IoRiciclo114.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F6222D17E8627800295CAE /* IoRiciclo114.png */; };
 		47F8CA5617ED63D8006DCB2A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F8CA5517ED63D8006DCB2A /* iAd.framework */; };
-		EA4257E81945A8AD0021499F /* ComuniSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4257E71945A8AD0021499F /* ComuniSearchViewController.m */; };
-		EA4257EB1945A8B90021499F /* SocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4257EA1945A8B90021499F /* SocialLoginViewController.m */; };
-		EA85BF471945AA9800ECE823 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA85BF461945AA9800ECE823 /* FacebookSDK.framework */; };
-		EA85BF491945ABC700ECE823 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA85BF481945ABC700ECE823 /* CoreLocation.framework */; };
+		EA097F2619646565002FA6C8 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA097F2519646565002FA6C8 /* FacebookSDK.framework */; };
 		EAA8069C18D7003D00C1A4DC /* UrlZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA8069A18D7003D00C1A4DC /* UrlZoneViewController.m */; };
 		EAB80EAD18D6FE210047993E /* IoRiciclo120.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB80EA618D6FE210047993E /* IoRiciclo120.png */; };
 		EAB80EAE18D6FE210047993E /* IoRiciclo100.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB80EA718D6FE210047993E /* IoRiciclo100.png */; };
@@ -81,8 +79,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		470075D117D12825004EE1C6 /* ProvinceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceViewController.h; sourceTree = "<group>"; };
-		470075D217D12825004EE1C6 /* ProvinceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceViewController.m; sourceTree = "<group>"; };
 		4701CC7117897132000E72A7 /* IoRiciclo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IoRiciclo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4701CC7417897132000E72A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4701CC7617897132000E72A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,8 +107,6 @@
 		4701CCC717897218000E72A7 /* IoRiciclo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IoRiciclo.xcdatamodel; sourceTree = "<group>"; };
 		4701CCD51789B51C000E72A7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4701CCD71789B541000E72A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		470CD2B817CFEAA500DF79DE /* ComuniViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComuniViewController.h; sourceTree = "<group>"; };
-		470CD2B917CFEAA500DF79DE /* ComuniViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComuniViewController.m; sourceTree = "<group>"; };
 		4711E18E183B6A4B00EED72F /* Avvisi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avvisi.h; sourceTree = "<group>"; };
 		4711E18F183B6A4B00EED72F /* Avvisi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avvisi.m; sourceTree = "<group>"; };
 		4711E191183B6E3B00EED72F /* AvvisiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvvisiViewController.h; sourceTree = "<group>"; };
@@ -155,6 +149,11 @@
 		47D28756183A6049006A15F6 /* CalendarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarioViewController.h; sourceTree = "<group>"; };
 		47D28757183A6049006A15F6 /* CalendarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioViewController.m; sourceTree = "<group>"; };
 		47D983C818BB5C4F007D38F0 /* IoRiciclo 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "IoRiciclo 2.xcdatamodel"; sourceTree = "<group>"; };
+		47E098BC19331939008F3A60 /* SocialLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialLoginViewController.h; sourceTree = "<group>"; };
+		47E098BD19331939008F3A60 /* SocialLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginViewController.m; sourceTree = "<group>"; };
+		47E098BF193341A0008F3A60 /* ComuniSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComuniSearchViewController.h; sourceTree = "<group>"; };
+		47E098C0193341A0008F3A60 /* ComuniSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComuniSearchViewController.m; sourceTree = "<group>"; };
+		47E098C21934D427008F3A60 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		47EAE406188EA79900FF9D1E /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 		47EAE407188EA79900FF9D1E /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		47EAE408188EA79900FF9D1E /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
@@ -180,12 +179,7 @@
 		47F6222B17E8627300295CAE /* IoRiciclo57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IoRiciclo57.png; path = ../IoRiciclo57.png; sourceTree = "<group>"; };
 		47F6222D17E8627800295CAE /* IoRiciclo114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IoRiciclo114.png; path = ../IoRiciclo114.png; sourceTree = "<group>"; };
 		47F8CA5517ED63D8006DCB2A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		EA4257E61945A8AD0021499F /* ComuniSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComuniSearchViewController.h; sourceTree = "<group>"; };
-		EA4257E71945A8AD0021499F /* ComuniSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComuniSearchViewController.m; sourceTree = "<group>"; };
-		EA4257E91945A8B90021499F /* SocialLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialLoginViewController.h; sourceTree = "<group>"; };
-		EA4257EA1945A8B90021499F /* SocialLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginViewController.m; sourceTree = "<group>"; };
-		EA85BF461945AA9800ECE823 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		EA85BF481945ABC700ECE823 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA097F2519646565002FA6C8 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		EAA8069A18D7003D00C1A4DC /* UrlZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlZoneViewController.m; sourceTree = SOURCE_ROOT; };
 		EAA8069B18D7003D00C1A4DC /* UrlZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlZoneViewController.h; sourceTree = SOURCE_ROOT; };
 		EAA8069D18D700E500C1A4DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,15 +197,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA85BF491945ABC700ECE823 /* CoreLocation.framework in Frameworks */,
+				47E098C31934D427008F3A60 /* CoreLocation.framework in Frameworks */,
 				47EAE40C188EA81900FF9D1E /* StoreKit.framework in Frameworks */,
-				EA85BF471945AA9800ECE823 /* FacebookSDK.framework in Frameworks */,
 				4711E19B183CF4C800EED72F /* QuartzCore.framework in Frameworks */,
 				47D2753218366E1B00D72F15 /* MapKit.framework in Frameworks */,
 				47EECAE4182D19D1005FD4E4 /* CoreData.framework in Frameworks */,
 				47F8CA5617ED63D8006DCB2A /* iAd.framework in Frameworks */,
 				4701CCD81789B541000E72A7 /* SystemConfiguration.framework in Frameworks */,
 				4701CC7517897132000E72A7 /* UIKit.framework in Frameworks */,
+				EA097F2619646565002FA6C8 /* FacebookSDK.framework in Frameworks */,
 				4701CC7717897132000E72A7 /* Foundation.framework in Frameworks */,
 				4701CC7917897132000E72A7 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -241,8 +235,8 @@
 		4701CC7317897132000E72A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA85BF481945ABC700ECE823 /* CoreLocation.framework */,
-				EA85BF461945AA9800ECE823 /* FacebookSDK.framework */,
+				EA097F2519646565002FA6C8 /* FacebookSDK.framework */,
+				47E098C21934D427008F3A60 /* CoreLocation.framework */,
 				47EAE40B188EA81900FF9D1E /* StoreKit.framework */,
 				4711E19A183CF4C800EED72F /* QuartzCore.framework */,
 				47D2753118366E1B00D72F15 /* MapKit.framework */,
@@ -260,26 +254,18 @@
 		4701CC7A17897132000E72A7 /* IoRiciclo */ = {
 			isa = PBXGroup;
 			children = (
-				EA4257E91945A8B90021499F /* SocialLoginViewController.h */,
-				EA4257EA1945A8B90021499F /* SocialLoginViewController.m */,
-				EA4257E61945A8AD0021499F /* ComuniSearchViewController.h */,
-				EA4257E71945A8AD0021499F /* ComuniSearchViewController.m */,
 				4701CCB6178971CD000E72A7 /* BaseUtils */,
 				4701CCB2178971B3000E72A7 /* Entities */,
 				EAA8069D18D700E500C1A4DC /* AppDelegate.h */,
 				4701CC8417897132000E72A7 /* AppDelegate.m */,
 				4701CC8C17897132000E72A7 /* MainStoryboard_iPhone.storyboard */,
 				4701CC8F17897132000E72A7 /* MainStoryboard_iPad.storyboard */,
-				470CD2B817CFEAA500DF79DE /* ComuniViewController.h */,
-				470CD2B917CFEAA500DF79DE /* ComuniViewController.m */,
 				4701CC9217897132000E72A7 /* RicicloViewController.h */,
 				4701CC9317897132000E72A7 /* RicicloViewController.m */,
-				470075D117D12825004EE1C6 /* ProvinceViewController.h */,
-				470075D217D12825004EE1C6 /* ProvinceViewController.m */,
 				47D2752E18366D6500D72F15 /* CassonettiViewController.h */,
 				47D2752F18366D6500D72F15 /* CassonettiViewController.m */,
-				EAA8069A18D7003D00C1A4DC /* UrlZoneViewController.m */,
 				EAA8069B18D7003D00C1A4DC /* UrlZoneViewController.h */,
+				EAA8069A18D7003D00C1A4DC /* UrlZoneViewController.m */,
 				47D275331836780800D72F15 /* CentriRaccoltaViewController.h */,
 				47D275341836780800D72F15 /* CentriRaccoltaViewController.m */,
 				47D28756183A6049006A15F6 /* CalendarioViewController.h */,
@@ -288,6 +274,10 @@
 				4711E192183B6E3B00EED72F /* AvvisiViewController.m */,
 				47D1CB2518BBF1CD004D84AC /* ComuneDettaglioViewController.h */,
 				47D1CB2618BBF1CD004D84AC /* ComuneDettaglioViewController.m */,
+				47E098BC19331939008F3A60 /* SocialLoginViewController.h */,
+				47E098BD19331939008F3A60 /* SocialLoginViewController.m */,
+				47E098BF193341A0008F3A60 /* ComuniSearchViewController.h */,
+				47E098C0193341A0008F3A60 /* ComuniSearchViewController.m */,
 				4701CC7B17897132000E72A7 /* Supporting Files */,
 			);
 			path = IoRiciclo;
@@ -502,7 +492,6 @@
 				47EECAF218312EAB005FD4E4 /* CoreDataMethods.m in Sources */,
 				47EECADD182D199C005FD4E4 /* TipiRiciclo.m in Sources */,
 				4701CC8117897132000E72A7 /* main.m in Sources */,
-				EA4257EB1945A8B90021499F /* SocialLoginViewController.m in Sources */,
 				4701CC8517897132000E72A7 /* AppDelegate.m in Sources */,
 				4701CC9417897132000E72A7 /* RicicloViewController.m in Sources */,
 				4701CCC1178971F0000E72A7 /* MyApplicationSingleton.m in Sources */,
@@ -522,14 +511,13 @@
 				47D28753183A0643006A15F6 /* CalendarioDetail.m in Sources */,
 				4701CCC817897218000E72A7 /* IoRiciclo.xcdatamodeld in Sources */,
 				4711E193183B6E3B00EED72F /* AvvisiViewController.m in Sources */,
-				470CD2BA17CFEAA500DF79DE /* ComuniViewController.m in Sources */,
 				47EAE40A188EA79900FF9D1E /* iRate.m in Sources */,
-				EA4257E81945A8AD0021499F /* ComuniSearchViewController.m in Sources */,
+				47E098BE19331939008F3A60 /* SocialLoginViewController.m in Sources */,
 				47EECAE3182D199C005FD4E4 /* Zone.m in Sources */,
 				47D1CB2F18BE0E1F004D84AC /* Utenti.m in Sources */,
 				4772085F1909250600889B0F /* Model9-10.xcmappingmodel in Sources */,
+				47E098C1193341A0008F3A60 /* ComuniSearchViewController.m in Sources */,
 				47D28758183A6049006A15F6 /* CalendarioViewController.m in Sources */,
-				470075D317D12825004EE1C6 /* ProvinceViewController.m in Sources */,
 				47EECAE0182D199C005FD4E4 /* GiorniRiciclo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,7 +579,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "C390650F-7CA9-41B1-95EC-BFAEE8105D08";
+				PROVISIONING_PROFILE = "EE3C372E-0D78-453B-ACCE-9FF769BF756E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

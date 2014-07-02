@@ -8,8 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8Vg-fn-6AR">
             <objects>
-                <navigationController storyboardIdentifier="1" definesPresentationContext="YES" id="uV7-NJ-HS9" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                <navigationController storyboardIdentifier="1" definesPresentationContext="YES" navigationBarHidden="YES" id="uV7-NJ-HS9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Bh1-Dl-JJz">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -248,26 +247,26 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTd-t5-iX2">
-                                        <rect key="frame" x="12" y="10" width="92" height="15"/>
+                                        <rect key="frame" x="12" y="10" width="92" height="14"/>
                                         <color key="tintColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwv-oV-5km">
-                                        <rect key="frame" x="115" y="10" width="91" height="15"/>
+                                        <rect key="frame" x="115" y="10" width="91" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-M3-rgP">
-                                        <rect key="frame" x="218" y="10" width="92" height="15"/>
+                                        <rect key="frame" x="218" y="10" width="92" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80o-E0-Jnx" userLabel="btnDomani">
-                                        <rect key="frame" x="27" y="55" width="30" height="72"/>
+                                        <rect key="frame" x="27" y="54" width="30" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,7 +277,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-bg-9dt" userLabel="btnDomani2">
-                                        <rect key="frame" x="57" y="55" width="30" height="72"/>
+                                        <rect key="frame" x="57" y="54" width="30" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,7 +288,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYB-Y3-1LV" userLabel="btnDopodomani">
-                                        <rect key="frame" x="133" y="55" width="30" height="72"/>
+                                        <rect key="frame" x="133" y="54" width="30" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -300,7 +299,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2L-D4-0bf" userLabel="btnTreGiorni">
-                                        <rect key="frame" x="233" y="55" width="30" height="72"/>
+                                        <rect key="frame" x="233" y="54" width="30" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,7 +310,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yao-nh-Gjh" userLabel="btnDopodomani2">
-                                        <rect key="frame" x="163" y="55" width="30" height="72"/>
+                                        <rect key="frame" x="163" y="54" width="30" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -322,7 +321,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4U-Fu-6jB" userLabel="btnTreGiorni2">
-                                        <rect key="frame" x="263" y="55" width="30" height="72"/>
+                                        <rect key="frame" x="263" y="54" width="30" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,25 +332,25 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-7E-EK5" userLabel="lblTiporicicloDomani">
-                                        <rect key="frame" x="12" y="32" width="92" height="15"/>
+                                        <rect key="frame" x="12" y="32" width="92" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz3-Nj-Cxb" userLabel="lblTiporicicloDopodomani">
-                                        <rect key="frame" x="112" y="32" width="98" height="15"/>
+                                        <rect key="frame" x="112" y="32" width="98" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdc-xV-89W" userLabel="lblTipoRiciclotregiorni">
-                                        <rect key="frame" x="215" y="32" width="98" height="15"/>
+                                        <rect key="frame" x="215" y="32" width="98" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="20" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="6iC-ya-ngX" userLabel="TVDomani">
-                                        <rect key="frame" x="12" y="55" width="92" height="72"/>
+                                        <rect key="frame" x="12" y="54" width="92" height="72"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="xcC-9w-24D" rowHeight="30" style="IBUITableViewCellStyleDefault" id="3eY-22-Dca">
@@ -379,7 +378,7 @@
                                         </connections>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="20" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="nRA-se-aQm" userLabel="TVDopoDomani">
-                                        <rect key="frame" x="116" y="55" width="90" height="72"/>
+                                        <rect key="frame" x="116" y="54" width="90" height="72"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -408,7 +407,7 @@
                                         </connections>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="20" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLD-5C-GXj" userLabel="TV3Giorni">
-                                        <rect key="frame" x="219" y="55" width="90" height="72"/>
+                                        <rect key="frame" x="218" y="54" width="90" height="72"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -655,78 +654,12 @@
                         <outlet property="tvDomani" destination="6iC-ya-ngX" id="OM4-zY-ihC"/>
                         <outlet property="tvDopoDomani" destination="nRA-se-aQm" id="obl-vK-RJk"/>
                         <outlet property="tvOggi" destination="zct-Y2-9ns" id="Mc8-2Q-rFI"/>
-                        <segue destination="6tA-g0-sRC" kind="push" identifier="goToProvince" id="ICK-SF-9WY"/>
                         <segue destination="FlA-9b-tSv" kind="push" identifier="doSocialLogin" id="6fx-oT-FEy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="-1079"/>
-        </scene>
-        <!--Comuni View Controller-->
-        <scene sceneID="X7r-20-jsA">
-            <objects>
-                <tableViewController storyboardIdentifier="4" id="6tA-g0-sRC" userLabel="Comuni View Controller" customClass="ProvinceViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PRm-3x-khq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="UDi-no-2A7">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UDi-no-2A7" id="jJM-v8-sLl">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="6tA-g0-sRC" id="cco-vZ-9Ui"/>
-                            <outlet property="delegate" destination="6tA-g0-sRC" id="Vsp-2d-a0q"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="FoY-0Q-2UL"/>
-                    <connections>
-                        <segue destination="iy7-Xe-PZt" kind="push" identifier="goToComuni" id="rkk-GB-tG1"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eRm-V4-IV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1925" y="797"/>
-        </scene>
-        <!--Comuni View Controller-->
-        <scene sceneID="XHR-hH-1og">
-            <objects>
-                <tableViewController storyboardIdentifier="3" id="iy7-Xe-PZt" customClass="ComuniViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="n2L-LB-NYx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="gQr-DJ-fC6">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQr-DJ-fC6" id="MOI-MN-QVg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="iy7-Xe-PZt" id="IVC-2h-Fg7"/>
-                            <outlet property="delegate" destination="iy7-Xe-PZt" id="xck-my-3ee"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="cb6-oO-JPx"/>
-                    <connections>
-                        <segue destination="2" kind="push" identifier="goToRiciclo" id="olm-5J-5iz"/>
-                        <segue destination="qMa-qR-m1V" kind="push" identifier="goToUrlZone" id="qry-im-DSM"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RDN-Rx-pAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-277" y="464"/>
+            <point key="canvasLocation" x="1032" y="-1047"/>
         </scene>
         <!--Comuni Search View Controller-->
         <scene sceneID="arE-5f-EK0">
@@ -759,8 +692,13 @@
                             <outlet property="delegate" destination="de8-Fo-s2q" id="8d7-ie-1JK"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="h77-Vh-xji"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="SearchBar" destination="Ozf-vE-ZOG" id="yoD-6A-7sV"/>
                         <outlet property="searchDisplayController" destination="DEP-Vd-PrI" id="SpV-Gi-jf0"/>
                         <segue destination="qMa-qR-m1V" kind="push" identifier="goToUrlZone2" id="vVj-dr-ahg"/>
                         <segue destination="2" kind="push" identifier="goToRiciclo2" id="9wE-M0-fhI"/>
@@ -778,7 +716,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="86" y="-2012"/>
+            <point key="canvasLocation" x="242" y="-2084"/>
         </scene>
         <!--Social Login View Controller-->
         <scene sceneID="T3a-H0-w09">
@@ -844,7 +782,9 @@
                             <constraint firstItem="Ruu-rW-qKj" firstAttribute="top" secondItem="Kpd-j1-Fga" secondAttribute="top" id="zxT-1S-beq"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="GkR-SF-Y7X"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btnIndietro" destination="sAh-by-U7n" id="RG0-ZT-ZYu"/>
                         <outlet property="lblDescrizione" destination="8iA-vw-fGy" id="kMg-bq-jKT"/>
@@ -1081,8 +1021,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="fqe-nh-FM0"/>
         <segue reference="6fx-oT-FEy"/>
-        <segue reference="8re-sk-vkI"/>
-        <segue reference="vVj-dr-ahg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -83,6 +83,8 @@
 @property (nonatomic, retain) IBOutlet UIView *contentView;
 @property (nonatomic, retain) IBOutlet UIView *giorniFuturiView;
 
+@property (nonatomic, strong) IBOutlet UINavigationBar *navBar;
+
 
 //- (void) createAdBannerView;
 //- (void) adjustBannerView;

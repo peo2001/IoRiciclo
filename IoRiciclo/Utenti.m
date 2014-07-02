@@ -82,8 +82,9 @@
 - (BOOL)IsUserLogged
 {
     NSString *idFB = [[NSUserDefaults standardUserDefaults] valueForKey:@"idFB"];
+    //NSString *nameFB =[[NSUserDefaults standardUserDefaults] valueForKey:@"nameFB"];
     
-    return ![ idFB isEqualToString:@""];
+    return ![ idFB isEqualToString:@""] &&  !(idFB ==nil) ;
 
 }
 
@@ -242,8 +243,8 @@
 {
     // NSLog(@"Did Receive Data %@", data);
     //[responseData appendData:data];
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    NSLog(@"Did Receive Data %@", string);
+  //  NSString *string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    //NSLog(@"Did Receive Data %@", string);
     
     //NSDictionary *dictionary = [string propertyList];
     //NSLog(@"%@",dictionary);

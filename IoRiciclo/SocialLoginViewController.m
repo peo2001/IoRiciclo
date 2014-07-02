@@ -37,6 +37,7 @@
     
     _loginView =  [[FBLoginView alloc] init];
     
+    [self.navigationController setNavigationBarHidden:YES ];
     
     
     self.loginView.readPermissions = @[@"public_profile", @"email"];

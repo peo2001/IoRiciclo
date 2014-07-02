@@ -11,7 +11,7 @@
 #import "SocialLoginViewController.h"
 
 
-@interface ComuniSearchViewController () <UISearchDisplayDelegate>
+@interface ComuniSearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) NSMutableArray *searchResult;
@@ -20,19 +20,46 @@
 
 @implementation ComuniSearchViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	[self.navigationController setNavigationBarHidden:NO ];
-    self.navigationController.navigationBar.topItem.title=@"Comuni";
-
+    [super viewWillAppear:animated];
+    //_SearchBar.delegate = self;
+    //self.navigationItem.titleView = self.searchDisplayController.searchBar ;
+    
+       
+    if ([MyApplicationSingleton getIdComune]==nil  && [MyApplicationSingleton getIdZona]==nil)
+    {
+        
+        [self.navigationController setNavigationBarHidden:YES animated:animated];
+        
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"IoRiciclo"
+                                                          message:@"Attenzione non hai ancora selezionato un Comune"
+                                                         delegate:self
+                                                cancelButtonTitle:@"Seleziona Comune"
+                                                otherButtonTitles:nil];
+        [message show];
+        
+    }else{
+        
+        [self.navigationController setNavigationBarHidden:NO animated:animated];
+        self.navigationController.navigationBar.topItem.title=@"Seleziona il Tuo Comune";
+        
+    }
     
     self.tableData = [[NSMutableArray alloc]init] ;
     self.searchResult = [NSMutableArray arrayWithCapacity:[self.tableData count]];
-     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [self performSelectorInBackground:@selector(CaricaComuniGeo) withObject:nil];
-   // [self.tableView searchBar ];
-   // _searchBar.showsCancelButton =NO;
+     //[self.tableView searchBar ];
+    //_searchBar.showsCancelButton =NO;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    
+    
     
     
 }
@@ -136,6 +163,8 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
+   
+    
     if ([searchText length] >2)
     {
         [self CaricaComuniStringSearch:searchText];
@@ -150,6 +179,9 @@
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    //[self filterContentForSearchText:searchString scope:@""];
+    
     
     return YES;
 }
@@ -185,6 +217,7 @@
             
             UIImage *img = [button backgroundImageForState:UIControlStateHighlighted];//[UIImage imageNamed:@"alert_button.png"];
             [button setBackgroundImage:img forState:UIControlStateNormal];
+            urlzona = [comune urlZone];
         }
         
         zone = [Zone RC_perComune:sender ];
@@ -198,15 +231,14 @@
         
         actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
         
-        [actionSheet showInView:self.view];
+        [actionSheet showInView:[self.navigationController view]];
     }
     
 }    // release popover in 'popoverControllerDidDismissPopover:' method
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
-    if ((buttonIndex !=(actionSheet.numberOfButtons-1 )) &&(!comune.HasUrlZone))
+    if ((buttonIndex !=(actionSheet.numberOfButtons-1 )) &&(!self.HasUrlZone))
     {
         //salva nel registro del telefono le informazioni della zona e del comune che servono per individuare i giorni di riciclo
         [[NSUserDefaults standardUserDefaults] setValue:[[zone objectAtIndex:buttonIndex]idcomune] forKey:@"IdComune"];
@@ -224,9 +256,11 @@
         
         [self sendUididToServer];
         
-        [self performSegueWithIdentifier: @"goToRiciclo2" sender: nil];
+        [self.navigationController popToRootViewControllerAnimated:TRUE];
+        
     }
-    if ((buttonIndex !=(actionSheet.numberOfButtons-1 )) &&(((comune.HasUrlZone) && (buttonIndex !=0))))
+    
+    if ((buttonIndex !=(actionSheet.numberOfButtons-1 )) &&(((self.HasUrlZone) && (buttonIndex !=0))))
     {
         
         //salva nel registro del telefono le informazioni della zona e del comune che servono per individuare i giorni di riciclo
@@ -245,12 +279,13 @@
         
         [self sendUididToServer];
         
-        [self performSegueWithIdentifier: @"goToRiciclo2" sender: nil];
+        [self.navigationController popToRootViewControllerAnimated:TRUE];
         
+
     }
     
     
-    if((comune.HasUrlZone) && (buttonIndex ==0))
+    if((self.HasUrlZone) && (buttonIndex ==0))
     {
         [self performSegueWithIdentifier: @"goToUrlZone2" sender:self];
     }
@@ -271,6 +306,7 @@
     
     if ([[segue identifier] isEqualToString:@"goToSocial"])
     {
+        
         SocialLoginViewController * destination = [segue destinationViewController];
         destination.comune = comune;
     }
@@ -308,5 +344,14 @@
     
     
 }
+-(BOOL)HasUrlZone
+{
+    return !([urlzona  isEqual:@""]|| (urlzona==nil));
+}
 
+
+- (void)dealloc {
+    //[_SearchBar release];
+    [super dealloc];
+}
 @end

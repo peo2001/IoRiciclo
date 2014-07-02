@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Syncronizer.h"
 
-@interface ComuniSearchViewController : UITableViewController<UIActionSheetDelegate>
+@interface ComuniSearchViewController : UITableViewController<UIActionSheetDelegate,UISearchDisplayDelegate,UISearchBarDelegate>
 {
 
     NSMutableArray *comuni;
     Comuni *comune;
     NSMutableArray *zone;
+    NSString * urlzona;
 }
 
+@property (retain, nonatomic) IBOutlet UISearchBar *SearchBar;
 
 
 @end

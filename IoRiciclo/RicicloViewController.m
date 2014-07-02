@@ -24,9 +24,10 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+   
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES ];
+    
     self.imageViewBackground.layer.cornerRadius = 5;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
@@ -68,22 +69,12 @@
         self.btnCassonetti.enabled = FALSE;
         self.btnCentriRaccolta.enabled = FALSE;
         self.btnAvvisi.enabled=FALSE;
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"IoRiciclo"
-                                                          message:@"Attenzione non Hai Ancora Selezionato un Comune"
-                                                         delegate:self
-                                                cancelButtonTitle:@"Seleziona Comune"
-                                                otherButtonTitles:nil];
-        
-        
-        
-        [message show];
-        
-        
+        [self performSegueWithIdentifier: @"goToComuni2" sender: self];
+
     }
     self.tvDomani.delegate= self;
     self.tvDopoDomani.delegate= self;
     self.tv3Giorni.delegate= self;
-    
    
     //fb login
     
@@ -109,6 +100,7 @@
     // [self createAdBannerView];
     //[self.view addSubview:self.adBannerView];
     //fine iad
+    [self.navigationController setNavigationBarHidden:YES ];
     
 }
 
@@ -117,16 +109,9 @@
     [self performSegueWithIdentifier: @"doSocialLogin" sender: self];
 }
 
-- (void)alertView:(UIAlertView *)theAlert clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    [self performSegueWithIdentifier: @"goToProvince" sender: self];
-    
-}
 
 //compone e disegna la toolbar
 - (void)createToolbar {
-    
-    
     
     NSString * stringTitle = [NSString stringWithFormat:@"Seleziona Comune"];
     
@@ -206,7 +191,7 @@
     
     //fine dateadd
     
-    return [gregorian dateByAddingComponents:components toDate:data options:0];;
+    return [gregorian dateByAddingComponents:components toDate:data options:0];
 }
 
 //disegna la parte di presentazione dei giorni di riciclo
@@ -237,9 +222,7 @@
     self.lblData.text =[NSString stringWithFormat:@"%@", [df stringFromDate:currentDate].uppercaseString ];
     
     //NSLog (@"curr date %@",[df stringFromDate:myDate].uppercaseString);
-    
-    //[self createToolbar];
-    
+  
     self.imageView.image = nil;
     self.lblTipoRiciclo.text = [NSString stringWithFormat:@"Nessun Riciclo"];
     self.lblDomani.text = [NSString stringWithFormat:@""];
@@ -441,7 +424,11 @@
     [self.tvDomani reloadData];
     [self.tvDopoDomani reloadData];
     [self.tv3Giorni reloadData];
+    
+    [self.navigationController setNavigationBarHidden:YES ];
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
     
 }
 
@@ -565,6 +552,20 @@
 
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  
+}
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        return false;
+    }else
+    {
+        return true;
+    }
+    
+}
 
 //SEZIONE NOTIFICHE
 -(void)selData
@@ -786,13 +787,9 @@
     
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
-    
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     
     [formatter setDateFormat:@"MM-dd-yyyy HH:mm"];
-    
-    
     
     NSString * notificatxt;
     
@@ -968,12 +965,11 @@
         
     }
     
-    
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"IoRiciclo"
                                                       message:strMessage
-                                                     delegate:nil
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
+                                                     delegate:self
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:@"OK", nil];
     [message show];
     
 }
