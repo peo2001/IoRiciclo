@@ -16,6 +16,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FBSDKMacros.h"
+
 /*!
  @typedef NS_ENUM (NSUInteger, FBLikeControlAuxiliaryPosition)
 
@@ -30,6 +32,11 @@ typedef NS_ENUM(NSUInteger, FBLikeControlAuxiliaryPosition)
     /*! The auxiliary view is below the like button. */
     FBLikeControlAuxiliaryPositionBottom,
 };
+
+/*!
+ @abstract Converts an FBLikeControlAuxiliaryPosition to an NSString.
+ */
+FBSDK_EXTERN NSString *NSStringFromFBLikeControlAuxiliaryPosition(FBLikeControlAuxiliaryPosition auxiliaryPosition);
 
 /*!
  @typedef NS_ENUM(NSUInteger, FBLikeControlHorizontalAlignment)
@@ -48,6 +55,11 @@ typedef NS_ENUM(NSUInteger, FBLikeControlHorizontalAlignment)
 };
 
 /*!
+ @abstract Converts an FBLikeControlHorizontalAlignment to an NSString.
+ */
+FBSDK_EXTERN NSString *NSStringFromFBLikeControlHorizontalAlignment(FBLikeControlHorizontalAlignment horizontalAlignment);
+
+/*!
  @typedef NS_ENUM (NSUInteger, FBLikeControlStyle)
 
  @abstract Specifies the style of a like control.
@@ -61,6 +73,11 @@ typedef NS_ENUM(NSUInteger, FBLikeControlStyle)
     /*! Displays the button only. */
     FBLikeControlStyleButton,
 };
+
+/*!
+ @abstract Converts an FBLikeControlStyle to an NSString.
+ */
+FBSDK_EXTERN NSString *NSStringFromFBLikeControlStyle(FBLikeControlStyle style);
 
 /*!
  @class FBLikeControl
