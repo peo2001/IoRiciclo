@@ -154,6 +154,11 @@
              {
                  cell.accessoryView =[[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"lampadinaazzurro.png"]];
              }
+             else
+             {
+                 //caso del consorzio al momento gestito come comune
+                  cell.accessoryView =[[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"lampadinagreen.png"]];
+             }
          }
         
     }
@@ -213,10 +218,12 @@
         if (comune.HasUrlZone)
         {
             [actionSheet addButtonWithTitle:[NSString stringWithFormat:@"Individua La Tua Zona" ]];
-            UIButton *button = [[actionSheet subviews] objectAtIndex:1];
+           //	 NSLog(@"Num subview %ld",[[actionSheet subviews] count ]);
+
+           // UIButton *button = [[actionSheet subviews] objectAtIndex:1];
             
-            UIImage *img = [button backgroundImageForState:UIControlStateHighlighted];//[UIImage imageNamed:@"alert_button.png"];
-            [button setBackgroundImage:img forState:UIControlStateNormal];
+            //UIImage *img = [button backgroundImageForState:UIControlStateHighlighted];//[UIImage imageNamed:@"alert_button.png"];
+            //[button setBackgroundImage:img forState:UIControlStateNormal];
             urlzona = [comune urlZone];
         }
         

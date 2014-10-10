@@ -14,7 +14,7 @@
 
 + (NSString *)UrlRequest
 {
-   //return [NSString stringWithFormat:@"http://hq.xtremesoftware.it/ioriciclo/webservices/"];
+    //return [NSString stringWithFormat:@"http://hq.xtremesoftware.it/ioriciclo/webservices/"];
     //return [NSString stringWithFormat:@"http://kiss/IoRiciclo/WebServices/"];
     return [NSString stringWithFormat:@"http://www.iriciclo.it/webservices/"];
 }
@@ -72,7 +72,7 @@
     
     
     
-    NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
+    //NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
     
     //se il teefono è connesso
     if ([Connector connected])
@@ -119,7 +119,7 @@
     
     
     
-    NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
+    //NSLog(@"fullUrlRequest comuni %@",fullUrlRequest );
     
     //se il teefono è connesso
     if ([Connector connected])
@@ -425,7 +425,7 @@
             
         }
         
-         NSLog(@"full request: %@",fullUrlRequest);
+        // NSLog(@"full request: %@",fullUrlRequest);
         
         
         

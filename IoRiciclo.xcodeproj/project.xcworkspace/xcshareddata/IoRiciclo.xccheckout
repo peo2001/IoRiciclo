@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F7DFB74B-8BE2-4994-8142-5D185FF882AD</string>
+	<string>792BD832-EA74-46B8-8FF1-8871835E588D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>IoRiciclo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5A3CBD2C-BC55-4656-9E76-8DA1CBA06FAE</key>
+		<key>C6465F113688154E96E560F720B5AE2E7562C80F</key>
 		<string>https://github.com/peo2001/IoRiciclo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IoRiciclo.xcodeproj/project.xcworkspace</string>
+	<string>IoRiciclo/IoRiciclo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5A3CBD2C-BC55-4656-9E76-8DA1CBA06FAE</key>
-		<string>../..</string>
+		<key>C6465F113688154E96E560F720B5AE2E7562C80F</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/peo2001/IoRiciclo.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5A3CBD2C-BC55-4656-9E76-8DA1CBA06FAE</string>
+	<string>C6465F113688154E96E560F720B5AE2E7562C80F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5A3CBD2C-BC55-4656-9E76-8DA1CBA06FAE</string>
+			<string>C6465F113688154E96E560F720B5AE2E7562C80F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>IoRiciclo</string>
 		</dict>

@@ -35,32 +35,68 @@
 
 + (NSDate *)dataInizioGiorno : (NSDate *) data{
     
+    
+    //intervallo con GMT
+    NSTimeZone* currentTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* nowTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger currentGMTOffset = [currentTimeZone secondsFromGMTForDate:data];
+    NSInteger nowGMTOffset = [nowTimeZone secondsFromGMTForDate:data];
+    
+    
+    NSTimeInterval interval = nowGMTOffset - currentGMTOffset;
+    
+    //fine intervallo
+    
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     //gather date components from date
     NSDateComponents *dateComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:data];
     
     //set date components
-    [dateComponents setHour:0];
+    [dateComponents setHour:((interval / 60)/ 60)];
     [dateComponents setMinute:0];
     [dateComponents setSecond:0];
     
-    //return date relative from date
-    return [calendar dateFromComponents:dateComponents];
+    //[dateComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"] ];
+    //[dateComponents setTimeZone:[NSTimeZone systemTimeZone]];
+    
+     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    //NSLog(@"%@",data);
+    //[gregorian setTimeZone:[NSTimeZone systemTimeZone]];
+    //NSLog(@"%@", [gregorian dateFromComponents:dateComponents]);
+    
+
+    return [gregorian dateFromComponents:dateComponents];
+    //fine test
     
 }
 
 + (NSDate *)dataFineGiorno:(NSDate *) data {
     
+    //intervallo
+    NSTimeZone* currentTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* nowTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger currentGMTOffset = [currentTimeZone secondsFromGMTForDate:data];
+    NSInteger nowGMTOffset = [nowTimeZone secondsFromGMTForDate:data];
+    
+    
+    NSTimeInterval interval = nowGMTOffset - currentGMTOffset;
+    
+    //fine intervallo
+    
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     //gather date components from date
     NSDateComponents *dateComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:data];
     
     //set date components
-    [dateComponents setHour:23];
+    [dateComponents setHour:23 + ((interval / 60)/ 60)];
     [dateComponents setMinute:59];
     [dateComponents setSecond:59];
+    
+    NSLog(@"%@", [calendar dateFromComponents:dateComponents]);
     
     //return date relative from date
     return [calendar dateFromComponents:dateComponents];

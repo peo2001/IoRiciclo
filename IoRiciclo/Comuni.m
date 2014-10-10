@@ -225,7 +225,7 @@
                 comune.urlZone=[currentResult objectForKey:@"urlzone"] ;
                 comune.numeroAbitanti=0;
                 comune.numeroAbitanti=[NSNumber numberWithInteger:[[currentResult objectForKey:@"numAb"] integerValue] ];
-                NSLog(@"%@",comune.numeroAbitanti);
+                //NSLog(@"%@",comune.numeroAbitanti);
                 
                 CLLocationDegrees latitude = [[[currentResult objectForKey:@"coordinate"] objectForKey:@"lat"] floatValue];
                 CLLocationDegrees longitude = [[[currentResult objectForKey:@"coordinate"] objectForKey:@"lon"] floatValue];

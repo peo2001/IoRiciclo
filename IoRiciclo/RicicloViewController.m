@@ -128,22 +128,18 @@
              stringTitle = [NSString stringWithFormat:@"%@ ",[[arrComune objectAtIndex:0] comune]];
             
             //se il comune è gestito dal comune stesso si va in una view dedicata
-            if ([[comune gestByComune]  isEqual:@"S"])
+            if ([[comune gestByComune]  isEqual:@"N"])
             {
-                
-                [ _btnInfo setImage:[UIImage imageNamed:@"lampadinagreen.png" ] forState:UIControlStateNormal];
-                /*[[_btnInfo layer] setBorderWidth:1.0f];
-                [[_btnInfo layer] setBorderColor:[UIColor grayColor].CGColor];
-                */
-                [_btnInfo addTarget:self action:@selector(infoComune) forControlEvents:UIControlEventTouchUpInside];
-                
-            }
-            else{
                 [_btnInfo setImage:[UIImage imageNamed:@"lampadinaazzurro.png" ] forState:UIControlStateNormal];
                 
                 [_btnInfo addTarget:self action:@selector(infoPrivato) forControlEvents:UIControlEventTouchUpInside];
-                //info.tintColor= [UIColor yellowColor];
+            }
+            else{
                 
+                
+                [ _btnInfo setImage:[UIImage imageNamed:@"lampadinagreen.png" ] forState:UIControlStateNormal];
+               
+                [_btnInfo addTarget:self action:@selector(infoComune) forControlEvents:UIControlEventTouchUpInside];
             }
             
         }
@@ -198,6 +194,10 @@
 
 -(void)refreshView:(NSDate *)data
 {
+   
+    
+    NSMutableArray * Giorni;
+    GiorniRiciclaggio =  [[NSMutableArray alloc] init];
     
     //FB
     if ([[[MyApplicationSingleton sharedInstance] utente] IsUserLogged])
@@ -234,20 +234,35 @@
     self.tvOggi.hidden = TRUE;
     
     
-  
-    //sinocronizzazione da remoto
-    GiorniRiciclaggio = [Syncronizer SyncGiorniRiciclo : currentDate];
-    
    
-    GiorniRiciclaggio = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] : currentDate : [DateHelper dataFineGiorno:currentDate ]];
+    //sinocronizzazione da remoto
+    //recupero anche i giorni riciclo di ieri per vedere se scavallano la mezzanotte
+    Giorni = [Syncronizer SyncGiorniRiciclo : [self dateAdd : currentDate:-1]];
     
-    //caso in cui è scaduto l'orario per il giorno odierno
-    if ([GiorniRiciclaggio count] == 0 )
-        currentDate =[self dateAdd : currentDate:1];    //oggi
-    //recupero i tipi di riciclo dal db interno per il giorno di oggi
+    //controlo se ci sono ricicli del giorno prima
+    Giorni = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] : [DateHelper dataInizioGiorno:[self dateAdd : currentDate:-1] ] :  [DateHelper dataFineGiorno:currentDate ]];
     
-    //NB:al massimo recupero due tipi di riciclo per giorno
-    GiorniRiciclaggio = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currentDate ] :[DateHelper dataFineGiorno:currentDate ]];
+    
+    for (GiorniRiciclo *currGiorno in Giorni)
+    {
+        //se la data di fine del riciclo è maggiore della mezzanotte del giorno di oggi allora andrà considerata
+        // NSLog(@"%@ %@",currGiorno.datagiornofine,[DateHelper dataInizioGiorno:currentDate]);
+        if ([currGiorno.datagiornofine compare:currentDate] == NSOrderedDescending)
+        {
+            [GiorniRiciclaggio addObject:currGiorno];
+        }
+        //i++;
+    }
+    
+    Giorni =  [[NSMutableArray alloc] init];
+    //creo un arrai che conterrà i ricicli del giorno prima
+    [Giorni addObjectsFromArray:GiorniRiciclaggio];
+    //fine controllo ricicli giorno prima
+    
+    //recupero i soli giorni di riciclo di oggi
+   
+   // GiorniRiciclaggio = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] : [DateHelper dataInizioGiorno:currentDate ] : [DateHelper dataFineGiorno:currentDate ]];
+    
     
     dataoraMin = NULL;
     dataoraMax = NULL;
@@ -275,14 +290,47 @@
         {
             dataoraMax = currGiorno.datagiornofine;
         }
-       
         
+    }
+   // NSLog(@"dataorainizio %@ dataora fine %@ ", dataoraMin,dataoraMax);
+    
+    //Caso in cui il giorno di oggi non ha nessun riciclo oppure i ricicli sono scaduti
+    //allora mostro i ricicli di domani
+    if (([dataoraMax compare:currentDate ] == NSOrderedAscending) || (dataoraMax == NULL))
+    {
+        currentDate =[self dateAdd : currentDate:1];
+        GiorniRiciclaggio = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currentDate ]  :[DateHelper dataFineGiorno:currentDate ]];
+        //recupero l'orario minimo e massimo del giro del riciclo
+        for (GiorniRiciclo *currGiorno in GiorniRiciclaggio)
+        {
+            // NSLog(@"dataorainizio %@ dataora fine %@ ", currGiorno.datagiorno,currGiorno.datagiornofine);
+            if (primo)
+            {
+                dataoraMin = currGiorno.datagiorno;
+                dataoraMax = currGiorno.datagiornofine;
+                // NSLog(@"dataorainizio %@ dataora fine %@ ", dataoraMin,dataoraMax);
+                
+                primo = false;
+            }
+            
+            if ([dataoraMin compare:currGiorno.datagiorno] == NSOrderedDescending)
+            {
+                dataoraMin = currGiorno.datagiorno;
+            }
+            if ([dataoraMin compare:currGiorno.datagiorno] == NSOrderedAscending )
+            {
+                dataoraMax = currGiorno.datagiornofine;
+            }
+            
+        }
+
     }
     
     //NSLog(@"dataoraMin %@ DataMax %@",dataoraMin, dataoraMax);
+    //NSLog(@"Compare %d %d",[dataoraMax compare:currentDate],NSOrderedDescending);
     
     NSDateFormatter *dfa = [NSDateFormatter new];
-    [dfa setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+    //[dfa setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     [dfa setDateFormat:@"HH:mm"];
     // NSLog(@"dataoraMin %@",[dfa stringFromDate:dataoraMin]);
    
@@ -297,20 +345,15 @@
         oraDaMostrare =[NSString stringWithFormat:@"%@",[dfa stringFromDate:dataoraMax]];
     }
     
-   
-    
     [dfa release];
     
-
-    //NB:al massimo recupero due tipi di riciclo per giorno
-    GiorniRiciclaggio = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:currentDate ] :[DateHelper dataFineGiorno:dataoraMax ]];
-        
+    //NSLog(@"currentDate %@",currentDate);
     if ([GiorniRiciclaggio count] > 2)
     {
         self.lblTipoRiciclo.text = [NSString stringWithFormat:@""];
         self.lblData.text =[NSString stringWithFormat:@"%@ (%@)", [df stringFromDate:currentDate].uppercaseString ,oraDaMostrare];
         
-        
+        //rende visibile la table view in caso di più di 2 ricicli
         self.tvOggi.hidden = FALSE;
     }
     else{
@@ -318,7 +361,7 @@
         if ([GiorniRiciclaggio count] > 0 )
         {
             self.lblData.text =[NSString stringWithFormat:@"%@ (%@)", [df stringFromDate:currentDate].uppercaseString ,oraDaMostrare];
-            
+            //NSLog(@"currentDate %@",currentDate);
             self.lblTipoRiciclo.text = [NSString stringWithFormat:@"%@",[[GiorniRiciclaggio objectAtIndex:0]tiporiciclo]];
             [self setImmagineInButton:0:_btnOggi : [GiorniRiciclaggio objectAtIndex:0]];
         }
@@ -333,8 +376,13 @@
         }
     }
     
+    
     //domani
     GiorniRiciclaggioDomani = [GiorniRiciclo RC_: [MyApplicationSingleton getIdComune]:[MyApplicationSingleton getIdZona] :[DateHelper dataInizioGiorno:[self dateAdd : currentDate:1] ] :[DateHelper dataFineGiorno:[self dateAdd : currentDate:1] ]];
+    
+    
+    //NSLog(@"domani %@ %@",[DateHelper dataInizioGiorno:[self dateAdd : currentDate:1] ],[DateHelper dataFineGiorno:[self dateAdd : currentDate:1] ]);
+    
     
     myDate = [self dateAdd : currentDate:1];
     
@@ -346,7 +394,6 @@
         self.tvDomani.hidden = FALSE;
     }
     else{
-        
         
         if ([GiorniRiciclaggioDomani count] > 0 )
         {
@@ -686,8 +733,6 @@
         [UIView commitAnimations];
     }
     
-    
-    
 }
 
 
@@ -844,9 +889,11 @@
     GiorniRiciclo *GiornoRiciclo;
     
     if (tableView == self.tvOggi) {
-        
-        GiornoRiciclo = [GiorniRiciclaggio objectAtIndex:indexPath.item];
-        cell.textLabel.text = [GiornoRiciclo tiporiciclo];
+        if ([GiorniRiciclaggio count] > 0 )
+        {
+            GiornoRiciclo = [GiorniRiciclaggio objectAtIndex:indexPath.item];
+            cell.textLabel.text = [GiornoRiciclo tiporiciclo];
+        }
         
     }
     

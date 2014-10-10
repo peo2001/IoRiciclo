@@ -233,7 +233,7 @@
         sUrl = [sUrl stringByAppendingString: [NSString stringWithFormat:@"&Em=%@",user[@"email"]]];
     }
     
-     NSLog(@"url= %@", [sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+    // NSLog(@"url= %@", [sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
     return [sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
 }

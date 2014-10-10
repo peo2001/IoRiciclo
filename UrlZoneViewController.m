@@ -52,7 +52,7 @@
     
     NSURL *fullURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?AppId=%@&DeviceType=IOS",@"",@"http://www.iriciclo.it/PagineComuni/Palermo/Default.asp" ,deviceUDID]] ;
     
-    NSLog(@"%@",fullURL);
+    //NSLog(@"%@",fullURL);
     [_webView setDelegate:self];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:fullURL];
     [_webView loadRequest:requestObj];

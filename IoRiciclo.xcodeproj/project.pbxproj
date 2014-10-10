@@ -407,11 +407,6 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Maria Cristina Narcisi";
-				TargetAttributes = {
-					4701CC7017897132000E72A7 = {
-						DevelopmentTeam = S73MBBQVY2;
-					};
-				};
 			};
 			buildConfigurationList = 4701CC6C17897132000E72A7 /* Build configuration list for PBXProject "IoRiciclo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -615,8 +610,8 @@
 		4701CCAD17897133000E72A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eugenio Pompei (4GE8945YEB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eugenio Pompei (4GE8945YEB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -625,7 +620,7 @@
 				GCC_PREFIX_HEADER = "IoRiciclo/IoRiciclo-Prefix.pch";
 				INFOPLIST_FILE = "IoRiciclo/IoRiciclo-Info.plist";
 				PRODUCT_NAME = IoRiciclo;
-				PROVISIONING_PROFILE = "EE3C372E-0D78-453B-ACCE-9FF769BF756E";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -634,8 +629,8 @@
 		4701CCAE17897133000E72A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: xTreme Software (S73MBBQVY2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: xTreme Software (S73MBBQVY2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -644,7 +639,7 @@
 				GCC_PREFIX_HEADER = "IoRiciclo/IoRiciclo-Prefix.pch";
 				INFOPLIST_FILE = "IoRiciclo/IoRiciclo-Info.plist";
 				PRODUCT_NAME = IoRiciclo;
-				PROVISIONING_PROFILE = "7E305690-7CBB-4812-B9BF-BFB4AE5200D2";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
